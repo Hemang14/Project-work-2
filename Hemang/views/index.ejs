@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include layouts/head %>
+    <title>Welcome To Our Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+        <a class="navbar-brand" href="/">OnlineCinema</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/register">Register <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container -->
+    <div class="container">
+        <h1 class="display-4">Watch Together</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6 mx-auto">
+                    <div class="lead">
+                        <p> Want to watch together, but lazy to go to the cinema? <br>
+                         Here, you can choose the movie you want to watch and invite whoever you want <br>
+                         without the hassle of coming to the cinema </p>
+                    </div>
+                    <div class="col-3 mx-auto">
+                            <p> <a href="/register" class="btn-coba">Try</a> </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <p> <a href="/register" class="btn-coba">Coba</a> </p> -->
+        </div>
+
+    <% include layouts/foot %>
+  </body>
+</html>
