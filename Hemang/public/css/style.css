@@ -1,0 +1,1151 @@
+.{
+    margin: 0;
+}
+/* Body */
+body {
+    background-image: url('/images/bg1.jpg');
+    background-size: cover;
+    background-size: 100%;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 9%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    position: absolute;
+    top: 0;
+}
+
+body::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 60%;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    position: absolute;
+    bottom: 0;
+}
+
+/* Navbar */
+.navbar {
+    position: relative;
+    z-index: 99999;
+}
+
+.navbar-brand {
+    font-family: 'Viga', sans-serif;
+    font-size: 26px;
+    color: #F8F7F4;
+}
+
+/* Jumbotron */
+.display-4 {
+    text-align: center;
+    margin-top: 150px;
+    font-weight: 400;
+    text-shadow: 0 0 15px rgba(0,0,0,0.7), 0 0 10px rgba(0,0,0,0.7);
+    margin-bottom: 40px;
+    color: #F8F7F4;
+}
+
+.lead {
+    text-align: center;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 450;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0,0,0,0.4), 0 0 10px rgba(0,0,0,0.4);
+    color: #F8F7F4;
+}
+
+@media (min-width: 992px) {
+/* Page Login.ejs */
+.display-4_login {
+    margin-top: 200px !important;
+    margin-left: 110px;
+    margin-bottom: -50px;
+    font-weight: 400;
+    font-size: 70px;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7);
+}
+
+.lead_login {
+    text-align: left;
+    position: relative;
+    left: -52px !important;
+    top: 50px !important;
+    font-size: 15px;
+    line-height: 10px;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.btn-register{
+    z-index: 1;
+    position: relative;
+    left: -310px;
+    top: 50px;
+}
+
+/* Page Register.ejs */
+.register{
+    right: 50%;
+    bottom: 150px;
+    left: 50%;
+}
+
+
+.display-4_register {
+    left: 110px;
+    top: 60px;
+    position: relative;
+    margin-top: 150px;
+    margin-bottom: -20px;
+    font-weight: 400;
+    font-size: 70px;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7);
+}
+
+.lead_register {
+    text-align: left;
+    position: relative;
+    left: -40px !important;
+    margin-top: 25px;
+    margin-bottom: -10px;
+    font-size: 15px;
+    line-height: 10px;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+/* User and Room Master */
+.btn-join{
+    top: 400px;
+    left: 830px;
+}
+
+.btn-logout{
+    top: 450px;
+    left: 821px;
+}
+
+.btn-logout2{
+    top: 470px;
+    left: 821px;
+}
+
+#room-input {
+    position: relative;
+    left: 782px;
+    top: 406px;
+    background:rgba(255, 255, 255, 0.2);
+    border-block: white;
+    color: white;
+    border-radius: 30px;
+    padding: 2px 10px 2px 10px;
+    text-align: center;
+}
+
+/* User */
+.jumbotron2 {
+    background-image: url('/images/bg1.jpg');
+    background-size: cover;
+    height: 650px;
+    margin-top: -435px;
+    position: relative;
+    z-index: 2;
+}
+
+.jumbotron2 .container {
+    position: relative;
+    z-index: 1;
+}
+
+.jumbotron2::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 12%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    position: absolute;
+    top: 0;
+}
+
+.jumbotron2 .display-4 {
+    font-family: 'Viga', sans-serif;
+    text-align: right;
+    position: relative;
+    top: 160px;
+    left: 40px;
+    color: #F8F7F4;
+}
+
+.img-thumbnail {
+    top: 230px;
+    left: 505%;
+}
+
+.img-thumbnail3 {
+    top: 80px;
+    left: 302%;
+}
+
+.hi p {
+    z-index: 999 !important;
+    left: 505%;
+    top: 220px;
+}
+
+.hi2 p {
+    z-index: 999 !important;
+    top: 80px;
+    left: 281%;
+}
+
+/* Room Master */
+.jumbotron3 {
+    background-image: url('/images/coba7.jpg');
+    background-size: cover;
+    height: 650px;
+    position: relative;
+    margin-top: -215px;
+    position: relative;
+    z-index: 2;
+}
+
+.jumbotron3 .container {
+    position: relative;
+    z-index: 1;
+}
+
+.jumbotron3::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 12%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    position: absolute;
+    top: 0;
+}
+
+.jumbotron3 .display-4 {
+    font-family: 'Viga', sans-serif;
+    text-align: right;
+    position: relative;
+    left: 30px;
+    font-size: 45px;
+    top: 160px;
+    color: #F8F7F4;
+}
+
+#dropdownMenuLink {
+    width: 20%;
+    top: 70px;
+    left: 105.5%;
+    border-radius: 40px;
+    border-color: white;
+}
+
+/* Page Livestreaming.ejs */
+#dropdownMenuLink1 {
+    background-color: #000000;
+    position: relative;
+    width: 101.75%;
+    left: 19px;
+}
+
+.d-flex {
+    position: relative;
+    margin-top: -410px;
+    top: -70px;
+}
+
+}
+
+#dropdownMenuLink1 {
+    background-color: #000000;
+    position: relative;
+}
+
+#dropdownMenuLink {
+    background-color: #000000;
+    position: relative;
+    z-index: 1000;
+}
+
+.display-4_login {
+    left: 110px;
+    top: 60px;
+    margin-top: 150px;
+    font-weight: 400;
+    font-size: 70px;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7);
+}
+
+.lead_login {
+    text-align: left;
+    left: 240px;
+    top: 55px;
+    font-size: 15px;
+    line-height: 10px;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.display-4_register {
+    left: 110px;
+    top: 60px;
+    margin-top: 150px;
+    font-weight: 400;
+    font-size: 70px;
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7);
+}
+
+.lead_register {
+    text-align: left;
+    left: 240px;
+    top: 55px;
+    font-size: 15px;
+    line-height: 10px;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.dropdown-menu {
+    color: black;
+}
+
+/* MINE CODE*/
+.grid{
+    background: url('/images/bg2.jpg');
+    display:grid;
+    padding:10px;
+    grid-column-gap:20px;
+    grid-row-gap:20px;
+    grid-template-columns: auto auto auto;
+  }
+  .grid-item{
+    background-color:rgb(0,0,0);opacity:0.6;;
+    font-size:15px;
+    padding:5px;
+    text-align: center;
+  }
+/* MINE CODE ENDS*/
+
+
+/* Live Streaming */
+.jumbotron4 {
+    background-image: url('/images/2.jpg');
+    background-size: cover;
+    height: 650px;
+    position: relative;
+}
+
+.jumbotron4 .container {
+    position: relative;
+}
+
+.jumbotron4::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 12%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2));
+    position: absolute;
+    top: 0;
+}
+
+.jumbotron4::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 60%;
+    background-image: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0));
+    position: absolute;
+    bottom: 0;
+}
+
+/* Movie */
+#video, #video-stream {
+    position: relative;
+    z-index: 999;
+    max-width: 854px;
+    max-height: 480px;
+    margin-left: 20px;
+}
+
+/* Chatbox */
+.chatbox {
+    position: relative;
+    max-width: 310px;
+    max-height: 576px;
+    background:rgba(0,0,0,0.7);
+    color: #F8F7F4;
+    padding: 25px;
+    box-shadow: 6px 6px 6px #000000;
+    overflow: visible;
+    margin-top: 10px;
+    z-index: 999;
+    right: 40px;
+}
+
+.chatlogs{
+    position: absolute;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    height: 360px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.chat-message {
+    margin-bottom: 4px;
+}
+
+.chatlogs::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chatlogs::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+.chatlogs::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: rgba(0,0,0,.1);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.chat-form {
+    position: relative;
+    z-index: 999;
+    margin-top: 400px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.chat-form button {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 30px;
+    color: white;
+    font-size: 10pt;
+    padding: 2px 10px;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: -40px;
+}
+
+#chat-input{
+    width: 200px;
+    color: white;
+    background:rgba(0,0,0,0);
+    border: none;
+    border-bottom: 1px solid white;
+    margin-bottom: -40px;
+}
+
+/* Modal User */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background-color: #f4f4f4;
+    margin: 30% auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2),  0 7px 20px 0 rgba(0,0,0,0.17);
+}
+
+.closeBtn {
+    color: #ccc;
+    float: right !important;
+    font-size: 30px;
+}
+
+.closeBtn:hover, .closeBtn:focus{
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Phone Version */
+@media (max-width: 576px) {
+    /* Page Index.ejs */
+
+    /* Watch Together */
+    .display-4 {
+        width: 100%;
+        text-align: center;
+        margin-top: 100px;
+        font-weight: 400;
+        font-size: 50px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.7), 0 0 5px rgba(0,0,0,0.7);
+        margin-bottom: 40px;
+        color: #F8F7F4;
+    }
+
+    /* Deskripsi */
+    .lead {
+        text-align: center;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4), 0 0 5px rgba(0,0,0,0.4);
+        color: #F8F7F4;
+    }
+
+    /* Button Coba */
+    .btn-coba{
+        position: relative;
+        right: 40px;
+    }
+
+    /* Navbar */
+    .navbar-brand, .nav-link {
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-link:hover {
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 2px solid black;
+        width: 0% !important;
+        padding-bottom: 2px;
+        margin-bottom: -4px;
+    }
+
+    /* Page Login.ejs */
+    /* Form Login */
+    .login{
+        position: relative;
+        z-index: 1;
+        top: 40px;
+        width: 350px;
+        height: 280px;
+        max-width: 100%;
+        max-height: 80%;
+        opacity: 0.6;
+        background-color: black;
+        color: white;
+        box-sizing: border-box;
+        font-family: 'Roboto Mono', monospace;
+        line-height: 32px;
+        padding: 50px 45px;
+        margin-left: -170px;
+    }
+
+    .login input{
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        color:white;
+        margin-bottom: 10px;
+    }
+
+    .login select{
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        height: 25px;
+        margin-bottom: 15px;
+        color:white;
+    }
+
+    .login select::before{
+        content: '';
+        background: red;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        pointer-events: none;
+    }
+
+    .login h1{
+        font-size: 14px;
+        margin-bottom: -3px;
+    }
+
+    .display-4_login {
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: 70px;
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7);
+    }
+
+    .lead_login {
+        text-align: right;
+        margin-top: -15px;
+        margin-bottom: -10px;
+        margin-right: 100px;
+        font-size: 14px;
+        line-height: 10px;
+        font-weight: 500;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-register{
+        font-weight: 500;
+        font-size: 13px;
+    }
+
+    /* Page Register.ejs */
+    .register{
+        position: relative;
+        width: 350px;
+        height: 330px;
+        top: 40px;
+        max-width: 100%;
+        max-height: 80%;
+        opacity: 0.6;
+        background-color: black;
+        color: white;
+        box-sizing: border-box;
+        font-family: 'Roboto Mono', monospace;
+        line-height: 32px;
+        padding: 40px 45px;
+    }
+
+    .display-4_register {
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: 60px;
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7);
+    }
+
+    .lead_register {
+        text-align: right;
+        margin-top: -12px;
+        margin-bottom: -10px;
+        margin-right: 110px;
+        font-size: 14px;
+        line-height: 10px;
+        font-weight: 500;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.4);
+    }
+
+    .register input{
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        color:white;
+    }
+
+    .register select{
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        height: 25px;
+        margin-bottom: 15px;
+        color:white;
+    }
+
+    .register select::before{
+        content: '';
+        background: red;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        pointer-events: none;
+    }
+
+    .register h1{
+        font-size: 14px;
+        margin-bottom: -3px;
+    }
+
+    .register h2{
+        font-size: 14px;
+    }
+
+    .btn-login{
+        position: relative;
+        z-index: 500;
+    }
+
+    /* User and Room Master */
+    .img-thumbnail {
+        width: 0 !important;
+        height: 0 !important;
+        background-color: rgba(0,0,0,0) !important;
+        border-color: rgba(0,0,0,0) !important;
+    }
+
+    .img-thumbnail3 {
+        width: 0 !important;
+        height: 0 !important;
+        background-color: rgba(0,0,0,0) !important;
+        border-color: rgba(0,0,0,0) !important;
+    }
+
+    .thumbnail-name{
+        width: 0 !important;
+        height: 0 !important;
+    }
+
+    .hi p{
+        color: rgba(0,0,0,0) !important;
+        font-size: 0 !important;
+    }
+
+    .hi2 p {
+        color: rgba(0,0,0,0) !important;
+        font-size: 0 !important;
+    }
+
+    .btn-join{
+        left: 33%;
+        z-index: 999;
+    }
+
+
+
+    .btn-logout{
+        left: 29.5%;
+        z-index: 999;
+    }
+
+    .btn-logout2{
+        left: 29%;
+        top: 120px;
+        z-index: 999;
+    }
+
+    .display-4 {
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+
+    /* User */
+    .img-thumbnail {
+        top: 100%;
+    }
+
+    .hi p{
+        top: 100%;
+    }
+
+    /* Room Master */
+    .hi2 p {
+        top: 100%;
+    }
+
+    #dropdownMenuLink {
+        width: 50%;
+        top: -310px;
+        left: 25%;
+        border-radius: 40px;
+        border-color: white;
+    }
+
+    /* Page Livestreaming.ejs */
+    #video {
+        left: -20px;
+        padding-right: -50px;
+        margin-right: -50px;
+    }
+}
+    /* Navbar */
+    .nav-link {
+        text-transform: uppercase;
+        font-family: 'Viga', sans-serif;
+        font-size: 13px;
+        margin-right: 30px;
+        font-weight: 400;
+    }
+
+    .navbar-brand, .nav-link {
+        text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.7);
+    }
+
+    .nav-link:hover::after {
+        content: '';
+        display: block;
+        border-bottom: 2px solid black;
+        width: 50%;
+        margin: auto;
+        padding-bottom: 2px;
+        margin-bottom: -4px;
+    }
+
+    /* Form Register */
+    /* Form Register kalau ada upload photo */
+    /* .register{
+        position: relative;
+        z-index: 1;
+        width: 350px;
+        height: 400px;
+        right: 50%;
+        bottom: 60px;
+        left: 50%;
+        position: absolute;
+        opacity: 0.6;
+        background-color: black;
+        color: white;
+        box-sizing: border-box;
+        font-family: 'Roboto Mono', monospace;
+        line-height: 32px;
+        padding: 40px 45px;
+    } */
+
+    .register{
+        position: relative;
+        z-index: 1;
+        width: 350px;
+        height: 330px;
+        opacity: 0.6;
+        background-color: black;
+        color: white;
+        box-sizing: border-box;
+        font-family: 'Roboto Mono', monospace;
+        line-height: 32px;
+        padding: 40px 45px;
+    }
+
+    .register input{
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        color:white;
+    }
+
+    .register select{
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        height: 25px;
+        margin-bottom: 15px;
+        color:white;
+    }
+
+    .register select::before{
+        content: '';
+        background: red;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        pointer-events: none;
+    }
+
+    .register h1{
+        font-size: 14px;
+        margin-bottom: -3px;
+    }
+
+    .register h2{
+        font-size: 14px;
+    }
+
+    /* Form Login */
+    .login{
+        margin-top:0;
+        position: relative;
+        z-index: 1;
+        width: 350px;
+        height: 280px;
+        right: 50%;
+        bottom: 160px;
+        left: 50%;
+        opacity: 0.6;
+        background-color: black;
+        color: white;
+        box-sizing: border-box;
+        font-family: 'Roboto Mono', monospace;
+        line-height: 32px;
+        padding: 50px 45px;
+    }
+
+    .login input{
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        color:white;
+        margin-bottom: 10px;
+    }
+
+    .login select{
+        width: 100%;
+        border: none;
+        outline: none;
+        background: transparent;
+        border-bottom: 1px solid white;
+        height: 25px;
+        margin-bottom: 15px;
+        color:white;
+    }
+
+    .login select::before{
+        content: '';
+        background: red;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 100px;
+        pointer-events: none;
+    }
+
+    .login h1{
+        font-size: 14px;
+        margin-bottom: -3px;
+    }
+
+    /* Button */
+    .btn{
+        line-height: 15px;
+        height: 35px;
+        width: 100%;
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        padding: 5px;
+        font-family: 'Roboto Mono', monospace;
+        margin-top: 10px;
+    }
+
+    .btn-login{
+        line-height: 15px;
+        height: 35px;
+        width: 100%;
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        padding: 5px;
+        font-family: 'Roboto Mono', monospace;
+        margin-top: 17px;
+    }
+
+    .btn-coba{
+        background: rgba(0,0,0,0.2);
+        border: 1px solid white;
+        border-radius: 30px;
+        color: white;
+        padding: 5px 35px 5px 35px;
+        font-family: 'Roboto Mono', monospace;
+        position: relative;
+        z-index: 2;
+    }
+
+    .btn-coba:visited{
+        color: white;
+    }
+
+    .btn-register{
+        background: rgba(0,0,0,0.2);
+        border: 1px solid white;
+        border-radius: 30px;
+        color: white;
+        padding: 5px 35px 5px 35px;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    .btn-register:visited {
+        color: white;
+    }
+
+    .btn-join{
+        position: relative;
+        background: rgba(255,255,255,0);
+        border: 1px solid white;
+        border-radius: 30px;
+        color: white;
+        padding: 5px 35px 5px 35px;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    .btn-join:visited{
+        color: white !important;
+    }
+
+    #change-room-master {
+        position: relative;
+        right: 390px;
+        bottom: 120px;
+    }
+
+    .join-room{
+        width : 100px;
+    }
+
+    .join-room:hover{
+        color:blue;
+        cursor: pointer;
+    }
+
+    .make-a-room{
+        width: 178px;
+        margin-left: -35px;
+        margin-top: -50px;
+        cursor: pointer;
+    }
+
+    .make-a-room:hover{
+        color: blue;
+    }
+
+    .btn-join:visited {
+        color: white;
+    }
+
+    .btn-logout{
+        position: relative;
+        background: rgba(255,255,255,0);
+        border: 1px solid white;
+        border-radius: 30px;
+        color: white;
+        padding: 5px 35px 5px 35px;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    .btn-logout2{
+        position: relative;
+        background: rgba(255,255,255,0);
+        border: 1px solid white;
+        border-radius: 30px;
+        color: white;
+        padding: 5px 35px 5px 35px;
+        font-family: 'Roboto Mono', monospace;
+    }
+
+    .btn-logout:visited {
+        color: white;
+    }
+
+    .btn-logout2:visited {
+        color: white;
+    }
+
+    .btn-upload,.btn-update{
+        margin-top: 20px;
+        position: relative;
+        font-family: 'Roboto Mono', monospace;
+        color: white;
+        border: 1px solid white;
+        border-radius: 2px;
+        background: rgba(0,0,0,0.7);
+        z-index : 999;
+    }
+
+    .img-thumbnail {
+        position: relative;
+        z-index: 999 !important;
+        border-radius: 100%;
+        width: 160px;
+        height: 160px;
+    }
+
+    .img-thumbnail3 {
+        position: relative;
+        z-index: 999 !important;
+        border-radius: 100%;
+        width: 160px;
+        height: 160px;
+    }
+
+    .thumbnail-name{
+        margin-top: 100px;
+        z-index: 4;
+    }
+
+    @media (max-width:992px){
+        .thumbnail-name{
+            margin-top: 350px;
+            left: 35%;
+        }
+        .thumbnail-name .hi p{
+            right: 33%;
+        }
+    }
+
+    .img-thumbnail2 {
+        position: absolute;
+        z-index: 1;
+        border-radius: 100%;
+        top: 13px;
+        right: 200px;
+        width: 35px;
+        height: 35px;
+    }
+
+    .hi p {
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        right: 17%;
+        margin-top: 20px;
+        font-weight: 500;
+        color: white;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    .hi2 p {
+        position: relative;
+        text-align: center;
+        right: 17%;
+        margin-top: 20px;
+        font-weight: 500;
+        color: white;
+        font-family: 'Noto Sans', sans-serif;
+    }
+
+    #voice-chat{
+        height: 30px;
+        width: 30px;
+        position: relative;
+        margin-bottom: -40px;
+    }
+
+    #voice-chat:hover{
+        background-color: white;
+        opacity: 50%;
+        cursor: pointer;
+    }
+
+    #voice-chat:active{
+        background: #000000;
+        opacity: 50%;
+    }
+    /* Page users-master.ejs */
+    .dropdown-film{
+        position: relative;
+        z-index: 9999;
+    }
