@@ -3,13 +3,28 @@
     <head>
         <% include layouts/head %>
         <title>Welcome</title>
+        <!--FIKA FONT -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&display=swap" rel="stylesheet">
+        <!--MOVIES/SHOWS FONT -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <!-- Welcome message -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="./style.css">
+
     </head>
 
-    <body class="background">
+    <body class="background" style="background-image: url('/images/bg1.jpg');">
+
+      <video autoplay muted loop id="myVideo">
+        <source src="/movie/trailer2.mp4#t=136" type="video/mp4">
+      </video>
+
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-            <a class="navbar-brand" href="/">FIKA</a>
+            <a class="navbar-brand" href="/" style="font-family: 'Nova Cut';font-weight:bold">FIKA</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -25,6 +40,23 @@
                 </div>
             </div>
         </nav>
+
+        <!-- Welcome message-->
+        <div class="welmsg">
+			      <div class="os-phrases" id="os-phrases">
+				          <h2>Sometimes it's better to</h2>
+				          <h2>Be Together</h2>
+				          <h2>Be You</h2>
+				          <h2>Be There</h2>
+                  <h2>This Fall</h2>
+				          <h2>Spend time</h2>
+				          <h2>With People</h2>
+				          <h2>You care about</h2>
+                </div>
+		        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js'></script><script  src="/javascripts/script.js"></script>
+        <!--WELCOME message ends-->
 
         <div id="modal-default">
             <!-- Foto Profil -->
@@ -42,14 +74,15 @@
             <!-- Jumbotron -->
             <div class="jumbotron2 jumbotron-fluid">
                 <div class="container">
-                    <h1 class="display-4">WELCOME CINEPHILE</h1>
+                    <h1 class="display-4" style="font-family: 'Nova Cut';font-weight:bold">WELCOME CINEPHILE</h1>
                     <button class="btn-join make-a-room"> Make a Room </button>
                     <p><input type="text" id="room-input" placeholder="Insert the room number" autocomplete="off" style="position:relative;margin-bottom:-150px;overflow: visible;z-index:999;"/></p>
                     <button class="btn-join join-room"> Join </button>
-                    <span id='message'></span>
+                    <span style="margin-left:250px;margin-bottom:90%"id='message'></span>
                 </div>
             </div>
         </div>
+
             <!-- Movie -->
         <video controls="controls" class="col-12 col-md-8" src="/movie/<%= film %>.mp4" id="video"></video>
         <canvas id="preview" style="display: none;"></canvas>
@@ -74,11 +107,10 @@
 
             <!-- Change Movie -->
         <div class="dropdown show dropdown-film col-12 col-md-8" id="change-film-modal">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Change Film</a>
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trending Movies</a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="#" id="joker" value="joker">Joker</a>
                 <a class="dropdown-item" href="#" id="schematics" value="schematics">Schematics</a>
-                <a class="dropdown-item" href="#" id="avenger-endgame" value="avenger-endgame">Avenger Endgame</a>
                 <a class="dropdown-item" href="#" id="nahi-meme" value="nahi-meme">nahi-meme</a>
 
 
@@ -94,11 +126,11 @@
               <!-- <li class="dropdown-item" data-id="..." href="#">Action</li> -->
             </div>
           </div>
-            <div class="filmm"><%=film%></div>
+            <!--<div class="filmm"><%=film%></div>-->
 
             <!-- *******************TRYING**************** -->
             <div id ="mov_thumbnails">
-
+              <!--
               <div class="grid">
                 <div class="grid-item"><img src="/images/tom.jpg" alt="tom" name="tom" width="150" height="160"><br><a href="#" id="tom" value="tom">tom</a></div>
                 <div class="grid-item"><img src="/images/tom.jpg" alt="tom" name="tom" width="150" height="160"><br><a href="#" id="tom" value="tom">tom</a></div>
@@ -109,21 +141,529 @@
                 <div class="grid-item"><img src="/images/tom.jpg" alt="tom" name="tom" width="150" height="160"><br><a href="#" id="tom" value="tom">tom</a></div>
                 <div class="grid-item"><img src="/images/tom.jpg" alt="tom" name="tom" width="150" height="160"><br><a href="#" id="tom" value="tom">tom</a></div>
                 <div class="grid-item"><img src="/images/tom.jpg" alt="tom" name="tom" width="150" height="160"><br><a href="#" id="tom" value="tom">tom</a></div>
-                
+
+              </div>
+              <a href="#" id="tom" value="tom"><img src="/images/tom.jpg" alt="tom" title="tom" name="tom" width="150" height="160"></a>
+            -->
+            <!--review Form-->
+            <h2 style="font-family:'Nova Cut';font-size:50px;font-weight:bold;margin-left:40px;color:white;">Got a minute??</h2>
+            <p  style="font-family:'Nova Cut';font-size:30px;margin-left:40px;color:white;">Enjoyed watching...Drop a Review!!</p>
+            <div class="openrev_btn">
+              <button class="openrev_Button" onclick="openrev_form()"><strong>Review</strong></button>
+            </div>
+            <div class="rev_Popup">
+              <div class="formrev_Popup" id="popup_revForm">
+                <form class="rev_formContainer">
+                  <h2 style="text-align:center">Drop a Review</h2>
+                  <label for="username">
+                    <strong>Username</strong>
+                  </label>
+                  <input type="text" id="username" placeholder="Your username" name="username" required>
+                  <label for="psw">
+                    <strong>Review</strong>
+                  </label>
+                  <input type="text" id="psw" placeholder="Your review" name="psw" required>
+                  <button type="submit" class="rev_btn">Submit</button>
+                  <button type="button" class="rev_btn cancel" onclick="closerev_Form()">Close</button>
+                </form>
+              </div>
+            </div>
+            <script>
+                function openrev_form() {
+                  document.getElementById("popup_revForm").style.display = "block";
+                }
+                function closerev_Form() {
+                  document.getElementById("popup_revForm").style.display = "none";
+                }
+            </script>
+            <!--review form ends-->
+            <br><br>
+            <h1 style="font-family: 'Anton';font-weight: bold;color:white;margin-left:70px">MOVIES</h1>
+            <div class="row">
+
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/joker.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                      </div>
+                      <div class="flip-card-back" style="font-size:8px">
+                        <h4><a href="#" id="tom" value="tom">tom</a></h4>
+                        <div id='heart' class='heart_button'></div>
+                        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+                        <script src='https://cdn.jsdelivr.net/mojs/latest/mo.min.js'></script><script  src="/javascripts/script.js"></script>
+                        <p>R | 2h 2min | Crime, Drama, Thriller | 4 October 2019</p>
+                        <p>IMDB: 8.4/10 | ROTTEN TAMATOES: 68%</p>
+                        <p><b>Director</b>: Todd Phillips</p>
+                        <p><b>Writers:</b> Todd Phillips, Scott Silver</p>
+                        <p><b>Stars:</b> Joaquin Phoenix, Robert De Niro, Zazie Beetz</p>
+                        <p>In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.<p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/avengersendgame.jpg" alt="Avengers Endgame" style="height:250px;width:200px;border-radius:20px">
+                      </div>
+                      <div class="flip-card-back" style="font-size:8px">
+                        <h4><a href="#" id="avenger endgame" value="avenger endgame">avenger endgame</a></h4>
+                        <div id='heart' class='heart_button'></div>
+                        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+                        <script src='https://cdn.jsdelivr.net/mojs/latest/mo.min.js'></script><script  src="/javascripts/script.js"></script>
+                        <p>PG-13 | 3h 1min | Action, Adventure, Drama | 26 April 2019</p>
+                        <p><b>Directors</b>: Anthony Russo, Joe Russo</p>
+                        <p><b>Writers</b>: Christopher Markus, Stephen McFeely</p>
+                        <p><b>Stars</b>: Robert Downey Jr., Chris Evans, Mark Ruffalo</p>
+                        <p>After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/imitationgame.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                      </div>
+                      <div class="flip-card-back" style="font-size:8px">
+
+                        <h4>John Doe</h4>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/blackwidow.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                      </div>
+                      <div class="flip-card-back" style="font-size:8px">
+
+                        <h4>John Doe</h4>
+                        <p>Architect & Engineer</p>
+                        <p>We love that guy</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/avtar.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/oblivion.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                    <br><br>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/thefaultinourstars.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/harrypotter.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/whitehousedown.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/f9.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/xmen.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/perks.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
 
-            <a href="#" id="tom" value="tom"><img src="/images/tom.jpg" alt="tom" title="tom" name="tom" width="150" height="160"></a>
+              <!-- SHOWS-->
 
+              <br><br>
+              <h1 style="font-family: 'Anton';font-weight: bold;color:white;margin-left:70px">SHOWS</h1>
+              <div class="row">
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/strangerthings.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/breakingbad.jpeg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/friends.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/greysanatomy.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>John Doe</h4>
+                          <p>Architect & Engineer</p>
+                          <p>We love that guy</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/cursed.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>John Doe</h4>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/peakyblinders.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>John Doe</h4>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                          </div>
+                        </div>
+                      </div>
+                      <br><br>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/queensgambit.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>John Doe</h4>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/dark.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>John Doe</h4>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/emilyinparis.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>John Doe</h4>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/ozark.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>John Doe</h4>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/lupin.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>John Doe</h4>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/falcon.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>John Doe</h4>
+                            <p>Architect & Engineer</p>
+                            <p>We love that guy</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+            </div>
+            <!--
             <div style="float:left;padding:15px;">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/Xc5n49aEhwc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div style="float:left;padding:15px;">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/aphPRcV61S8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+            </div>-->
           <br>
           <br><br>
-        -->
+
+          <div id="b_bottom" style="text-align:center;padding:10px;background-color:#161616;color:white;">
+          <p><a href="https://bmsce.ac.in/">fika.ac.in</a></p>
+          <p>
+            <a href="https://www.facebook.com/bmsce.official"><img src="/images/facebook-logo.png" alt="#facebook" height="50px" style="border:2px solid white"></a>
+            <a href="https://twitter.com/bmsconnectplus?lang=en"><img src="/images/twitter-logo.png" alt="#twitter" height="50px" style="border:2px solid white">
+            <a href="https://www.linkedin.com/company/bmsce-official/"><img src="/images/linkedin-logo.png" alt="#linkedin" height="50px" style="border:2px solid white"></a>
+          </p>
+          <p>©2021 by Fika - Watch Together<br>Proudly created by<br>Harshil Doshi<br>Hemang Singh<br>Nikita Paras Toliya<br>Neha B Chadaga</p>
         </div>
 
         <% include layouts/foot %>
