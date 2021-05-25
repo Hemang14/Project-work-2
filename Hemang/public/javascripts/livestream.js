@@ -9,17 +9,26 @@ var roomID;
 
 $(function() {
     $("#modal-default").show();
+    $("#b_bottom").hide();
     $("#chat-modal").hide();
     $(".chatbox").hide();
     $("#mov_thumbnails").hide();
+    $("#os-phrases").show();
+
     //master
     $("#video").hide();
     $("#change-film-modal").hide();
     $("#change-room-master").hide();
     $("#mov_thumbnails").hide();
+    $("#b_bottom").hide();
+    $("#os-phrases").show();
 
+    myVideo
     //user
     $("#video-stream").hide();
+    $("#b_bottom").show();
+    $("#os-phrases").show();
+
 
 
 });
@@ -71,6 +80,10 @@ socket.on('roomNumber',function(id,userID) {
     $(".chatbox").show();
     $("#change-room-master").show();
     $("#mov_thumbnails").show();
+    $("#b_bottom").show();
+    $("#myVideo").hide();
+    $("#os-phrases").hide();
+
 
     idUser = userID;
     video.play();
@@ -94,11 +107,18 @@ socket.on('showReady',function(id,userID,time,filmName) {
     $("#video-stream").show();
     $("#chat-modal").show();
     $(".chatbox").show();
+    $("#b_bottom").show();
+    $("#myVideo").hide();
+    $("#os-phrases").hide();
 
     //Hide and stop room master component
     $("#change-room-master").hide();
     $("#video").hide();
     $("#change-film-modal").hide();
+    $("#b_bottom").show();
+    $("#myVideo").hide();
+    $("#os-phrases").hide();
+
     idUser = userID;
     video.pause();
     if(videoPlay)clearInterval(videoPlay);
@@ -184,9 +204,9 @@ $("#schematics").click(function(e) {
     changeFilm($("#schematics").html());
 });
 
-$("#avenger-endgame").click(function(e) {
+$("#avenger endgame").click(function(e) {
     e.preventDefault();
-    changeFilm($("#avenger-endgame").html());
+    changeFilm($("#avenger endgame").html());
 });
 
 $("#nahi-meme").click(function(e) {
