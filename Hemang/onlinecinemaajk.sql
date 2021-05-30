@@ -64,7 +64,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `password`, `gambar`) VALUES
 (18, 'kingMidas', '$2b$10$V9St4zfZO2Tig5Id0.dCReCdZgxYOzZOHBqxN48Sdg.rb1ljg8Ur6', ''),
 (19, 'jackolatern', '$2b$10$akZWGVVWBNUDaPvFC/kWTudQy0BrSQYpBSRdDBIY5QSq3deafDuJC', '');
-
+/*
+(18, 'kingMidas', '$2b$10$UDQJLfH0X/WnkoCeQ/S7uOwzjvGCFF7Bg2qoG6cAwU3KFVAapujM2', ''),
+(19, 'jackolatern', 'jackolatern', '');
+*/
 --
 -- Indexes for dumped tables
 --
