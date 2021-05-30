@@ -34,8 +34,9 @@ body::after {
 }
 
 .navbar-brand {
-    font-size: 40px;
+    font-size: 30px;
     color: #F8F7F4;
+    text-align: right;
 }
 
 /* Jumbotron */
@@ -1266,7 +1267,7 @@ a:hover {
         top: -310px;
         left: 25%;
         border-radius: 40px;
-        border-color: white;
+        border-color: grey;
     }
 
     /* Page Livestreaming.ejs */
@@ -1280,7 +1281,7 @@ a:hover {
     .nav-link {
         text-transform: uppercase;
         font-family: 'Viga', sans-serif;
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 400;
     }
 

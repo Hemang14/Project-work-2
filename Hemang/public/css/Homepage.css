@@ -1,0 +1,126 @@
+body {
+  font-family: "Montserrat";
+  text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat-Bold";
+}
+p {
+  color: #8f8f8f;
+}
+
+.container-fluid{
+  padding: 5%;
+}
+
+.big-heading {
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+.headings{
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.signup-button {
+  margin-left: 40%;
+  margin-top: 20px;
+  padding: 2px;
+}
+
+.title-video {
+  position: relative;
+  left: 25%;
+}
+.navbar {
+  padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+  font-family: "Zen Dots";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+}
+#title {
+  /*background-color: #440a67;*/
+  background-color: #350b40;
+  color: #fff;
+  text-align: left;
+}
+#features{
+  /*background-color: #ad6c80;*/
+  background-color: #7c4789;
+  position: relative;
+  color: black;
+}
+/*#movie-slider{
+  border-top: white;
+  background-color: #350b40;
+  padding: 4% 9%;
+}*/
+#movie-slider-section{
+  border-top: white;
+  background-color: #350b40;
+  padding: 4% 9%;
+}
+#show-slider{
+  border-top: white;
+  background-color: #350b40;
+  padding: 4% 9%;
+}
+#footerid{
+  background-color: white;
+}
+.features-para{
+  color: black;
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 4.5%;
+}
+
+.icon {
+  color: #0f0f0f;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #957dad;
+}
+
+.card-individual{
+  text-align: center;
+  margin: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+}
+.card-individual:hover {
+    background-color: #F8F8FF;
+    transform: scale(1.02);
+}
+.movie-img{
+margin: auto;
+width: 14rem;
+height: 20rem;
+}
+.control-buttons{
+  padding: 3rem;
+}
