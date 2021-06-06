@@ -5,27 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login/signup</title>
-    <link rel="stylesheet" href="./login2.css">
+    <link rel="stylesheet" href="./Loginpage.css">
 </head>
 <body>
     <div class="logo">
         <img src="./Screenshot (480).png">
     </div>
-</html><div class="container" id="container">
+<div class="container" id="container">
 	<div class="form-container sign-up-container">
 		<form action="#">
 			<h1>Create Account</h1>
-			<input type="text" placeholder="Name" />
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
-			<button>Sign Up</button>
+			<input type="text" placeholder="Name" onblur="check_name()" id="Name"><br><br> 
+			<label id="name-field1" style="color:red;display:none;">Enter a valid name</label><br>
+
+			<input type="email" placeholder="Email" onblur="check_email()" id="Email" ><br><br> 
+			<label id="email-field1" style="color:red;display:none;">Enter a valid email</label><br>
+
+
+			<input type="password" placeholder="Password" id="pwd" ><br><br>
+			<button onclick="Javascript:validateUserDetails()">Sign Up</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
 		<form action="#">
 			<h1>Sign in</h1>
-			<input type="email" placeholder="Email" />
-			<input type="password" placeholder="Password" />
+			<input type="email" placeholder="Email" onblur="check_email1()" id="Email1" ><br> 
+			<label id="email-field2" style="color:red;display:none;">Enter a valid email</label><br>
+
+			<input type="password" placeholder="Password" id="pwd" ><br><br>
 			<a href="#">Forgot your password?</a>
 			<button>Sign In</button>
 		</form>
@@ -46,6 +53,6 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="./login2.js"></script>
-
 </body>
+<script type="text/javascript" src="./Loginpage.js"></script>
+</html>
