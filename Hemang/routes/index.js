@@ -1,5 +1,6 @@
 var express = require('express');
 const user = require('./../core/user');
+const db = require('./../db');
 var router = express.Router();
 var fs = require('fs');
 /* GET home page. */
@@ -65,5 +66,25 @@ router.get('/logout', (req,res,next)=>{
       });
   }
 });
+
+// for review form
+
+router.get('/review', function(req, res, next) {
+res.render('/user');
+});
+router.post('/review', function(req, res, next) {
+
+  // store all the user input data
+  const userDetails=req.body;
+
+  // insert user data into users table
+  var sql = 'INSERT INTO user_review SET ?';
+  db.query(sql, userDetails,function (err, data) {
+      if (err) throw err;
+         console.log("User review dat is inserted successfully ");
+  });
+ res.redirect('/users');  // redirect to create room page after inserting the data
+});
+// review form ends
 
 module.exports = router;

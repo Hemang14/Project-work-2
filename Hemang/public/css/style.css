@@ -751,26 +751,6 @@ a:hover {
 * {
         box-sizing: border-box;
       }
-      .openrev_btn {
-        display: flex;
-        justify-content: left;
-        z-index: 999999;
-        margin-left:20px;
-      }
-      .openrev_Button {
-        border: none;
-        border-radius: 10px;
-        width:200px;
-        height:50px;
-        background-color: #1c87c9;
-        background-image: url('/images/bg6.jpg');
-        color: white;
-        padding: 14px 20px;
-        cursor: pointer;
-        margin-left:60px;
-
-        z-index: 999999;
-      }
       .rev_Popup {
         position: relative;
         text-align: left;
@@ -781,7 +761,7 @@ a:hover {
         display: none;
         position: fixed;
         left: 45%;
-        top: 5%;
+        bottom:7%;
         transform: translate(-50%, 5%);
         border: 3px solid #999999;
         border-radius: 15px;
@@ -789,17 +769,17 @@ a:hover {
         color: white;
       }
       .rev_formContainer {
-        max-width: 300px;
+        max-width: 600px;
         padding: 20px;
         background-image: url('/images/bg5.jpg');
         z-index: 999999;
 
       }
       .rev_formContainer input[type=text],
-      .rev_formContainer input[type=text] {
+      .rev_formContainer textarea[type=text] {
         width: 100%;
-        padding: 15px;
-        margin: 5px 0 20px 0;
+        padding:12px;
+        margin: 5px 0 2px 0;
         border: none;
         background-image: url('/images/bg5.jpg');
         color: white;
@@ -812,8 +792,15 @@ a:hover {
         outline: none;
         color: white;
       }
+      .rev_formContainer input[type=text]:hover,
+      .rev_formContainer textarea[type=text]:hover
+        {
+        outline: none;
+        border-color: #yellow;
+        box-shadow: 0 0 5px yellow;
+      }
       .rev_formContainer .rev_btn {
-        padding: 12px 20px;
+        padding: 10px 5px;
         border: none;
         background-color: #8ebf42;
         background-image: url('/images/bg7.jpg');
@@ -834,6 +821,83 @@ a:hover {
       }
 /*Review FORM ENDS*/
 
+/* Review CARD STARTS*/
+.flip-card_rev {
+  background-color: transparent;
+  width: 500px;
+  height: 200px;
+  perspective: 1000px;
+  margin-left: 200px;
+}
+
+.flip-card-inner_rev {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card_rev:hover .flip-card-inner_rev {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front_rev, .flip-card-back_rev {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front_rev {
+  background-image: url('/images/bg5.jpg');
+  color: white;
+  border-radius:20px;
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+.flip-card-back_rev {
+  background-image: url('/images/bg5.jpg');
+  color: white;
+  border-radius:20px;
+  transform: rotateY(180deg);
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+.rev_Button {
+  border: none;
+  border-radius: 10px;
+  width:200px;
+  height:50px;
+  background-color: #1c87c9;
+  background-image: url('/images/bg6.jpg');
+  color: white;
+  padding: 14px 20px;
+  cursor: pointer;
+  margin-left:30px;
+  z-index: 999999;
+}
+.rev_Button:hover{
+  transform: scale(1.3);
+}
+/*Review CARD ENDS*/
+
+/* Stopwatch code starts */
+#stopwatch {
+    font-family: 'Nova Cut';
+    font-size: 35px;
+    margin-top:30px;
+    color:grey;
+    transform: translate(-50%, -55%);
+}
+/* Stopwatch code ends */
 /* MINE CODE ENDS*/
 
 
@@ -891,6 +955,10 @@ a:hover {
     margin-top: 10px;
     z-index: 999;
     right: 40px;
+    outline: none;
+    border-color: #green;
+    box-shadow: 0 0 5px green;
+
 }
 
 .chatlogs{
@@ -1294,7 +1362,6 @@ a:hover {
         display: block;
         border-bottom: 2px solid black;
         width: 50%;
-        margin: auto;
         padding-bottom: 2px;
         margin-bottom: -4px;
     }
