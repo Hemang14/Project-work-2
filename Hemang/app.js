@@ -7,11 +7,18 @@ var logger = require('morgan');
 var fileUpload = require('express-fileupload');
 var indexRouter = require('./routes/index');
 var Room = require('./room');
+var con = require('./db');
 
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 8600;
+
+// //let conn = con();
+// con.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -101,6 +108,11 @@ io.on('connection',function(socket) {
     rooms[id] = room;
 
     people[socket.id] = {"roomID" : id, "role" : "master", "name" : username};                      ///CREATING A NEW ROOM AND MAKING HIM ADMIN
+    var sql = "INSERT INTO room (room_number, user_name, roles) VALUES ( '"+id+"', '"+username+"','master')";
+    con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("1 record inserted");
+    });
 
     people[socket.id].roomID = id;
     rooms[id].addPerson(socket,username);
@@ -121,6 +133,20 @@ io.on('connection',function(socket) {
     if(exists){                                                                 ///ADDING USER TO A EXISTING ROOM
       rooms[data.id].addPerson(socket,data.username);
       people[socket.id] = {"roomID" : data.id, "role" : "user", "name" : data.username};
+      //var insertData = [[data.id,"user", data.username],[123, "user", "sample"]];
+
+var sql = "INSERT INTO room (room_number, user_name, roles) VALUES ( '"+data.id+"', '"+data.username+"','user')";
+con.query(sql, function (err, result) {
+if (err) throw err;
+console.log("1 record inserted");
+});
+/*con.query("INSERT INTO room (room_number, roles, user_name) VALUES ?", [insertData], function (err, result, fields) {
+   // if any error while executing above query, throw error
+   if (err) throw err;
+   // if there is no error, you have the result
+   console.log(result);
+ });*/
+      console.log(people[socket.id].roomID);
       socket.join(people[socket.id].roomID);
       console.log("Client "+socket.id+" Username:"+people[socket.id].name+" join room "+people[socket.id].roomID);
       io.sockets.to(socket.id).emit('showReady',data.id,socket.id,timeRoom[people[socket.id].roomID],filmRoom[people[socket.id].roomID]);
@@ -189,6 +215,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+/*app.listen(8600, function() {
+  console.log("Server started on port 8600");
+});*/
 
 http.listen(port, function(){
   logger("Server is running at port " +port);
