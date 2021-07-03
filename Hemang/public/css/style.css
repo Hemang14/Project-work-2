@@ -3,7 +3,8 @@
 }
 /* Body */
 body {
-    background-image: url('/images/bg1.jpg');
+    /* background-image: url('/images/bg1.jpg'); */
+    background-color: #39065A;
     background-size: cover;
     background-size: 100%;
 }
@@ -393,7 +394,7 @@ body::after {
 
   .flip-card-back {
     z-index: -1;
-    background-image: url("/images/bg5.jpg");
+    background-image: url("https://i.pinimg.com/originals/b5/86/f1/b586f10f4f3700ed2629223e21f9d4a5.jpg");
     background-color: #2A1B3D;
     color: white;
     transform: rotateY(180deg);
@@ -771,7 +772,7 @@ a:hover {
       .rev_formContainer {
         max-width: 600px;
         padding: 20px;
-        background-image: url('/images/bg5.jpg');
+        background-image: url('https://media.istockphoto.com/photos/abstract-gradient-dark-purple-background-gradient-dark-purple-color-picture-id1162940275?k=6&m=1162940275&s=170667a&w=0&h=FmiQYut6w8qnA6VRh7QK2G3TuFnsKmKK4TbRyA7nzhM=');
         z-index: 999999;
 
       }
@@ -781,7 +782,7 @@ a:hover {
         padding:12px;
         margin: 5px 0 2px 0;
         border: none;
-        background-image: url('/images/bg5.jpg');
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYrrZmXJLNSa-uHPNqLE0HZfC3FVKFn5PXQ&usqp=CAU');
         color: white;
         z-index: 999999;
 
@@ -803,17 +804,17 @@ a:hover {
         padding: 10px 5px;
         border: none;
         background-color: #8ebf42;
-        background-image: url('/images/bg7.jpg');
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmCOGtSKGdv7WKpHnePeqKIGg_9v95skamgg&usqp=CAU');
         color: white;
         cursor: pointer;
         width: 100%;
-        margin-bottom: 15px;
+        margin-bottom: 5px;
         opacity: 0.8;
         border-radius: 5px;
       }
       .rev_formContainer .cancel {
         background-color: #cc0000;
-        background-image: url('/images/bg6.jpg');
+        background-image: url('https://us.123rf.com/450wm/tomertu/tomertu1410/tomertu141000252/32810033-abstract-blurred-image-of-dark-purple-background-bokeh-lights-defocused-.jpg?ver=6');
       }
       .rev_formContainer .rev_btn:hover,
       .openrev_Button:hover {
@@ -853,22 +854,23 @@ a:hover {
 }
 
 .flip-card-front_rev {
-  background-image: url('/images/bg5.jpg');
+  /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqHunaUl_n9bGWXi9bCgWKy-VQuowPuCh8fg&usqp=CAU'); */
+  background-color: #301B3F;
   color: white;
   border-radius:20px;
   outline: none;
-  border-color: #9ecaed;
-  box-shadow: 0 0 10px #9ecaed;
+  border-color: #B52B65;
+  box-shadow: 0 0 10px #B52B65;
 }
 
 .flip-card-back_rev {
-  background-image: url('/images/bg5.jpg');
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKYrrZmXJLNSa-uHPNqLE0HZfC3FVKFn5PXQ&usqp=CAU');
   color: white;
   border-radius:20px;
   transform: rotateY(180deg);
   outline: none;
-  border-color: #9ecaed;
-  box-shadow: 0 0 10px #9ecaed;
+  border-color: #B52B65;
+  box-shadow: 0 0 10px #B52B65;
 }
 
 .rev_Button {
@@ -877,7 +879,7 @@ a:hover {
   width:200px;
   height:50px;
   background-color: #1c87c9;
-  background-image: url('/images/bg6.jpg');
+  background-image: url('https://us.123rf.com/450wm/tomertu/tomertu1410/tomertu141000252/32810033-abstract-blurred-image-of-dark-purple-background-bokeh-lights-defocused-.jpg?ver=6');
   color: white;
   padding: 14px 20px;
   cursor: pointer;
@@ -887,6 +889,43 @@ a:hover {
 .rev_Button:hover{
   transform: scale(1.3);
 }
+
+/* Star rating starts*/
+div.stars {
+  width: 150px;
+  display: inline-block;
+}
+
+input.star { display: none; }
+
+label.star {
+  float: right;
+  font-size: 30px;
+  color: #444;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star:before {
+  content: '\f005';
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star:before {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star:before { color: #F62; }
+
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+label.star:before {
+  content:'\f005';
+  font-family: FontAwesome;
+}
+
+/* Star rating ends */
 /*Review CARD ENDS*/
 
 /* Stopwatch code starts */
@@ -956,7 +995,7 @@ a:hover {
     z-index: 999;
     right: 40px;
     outline: none;
-    border-color: #green;
+    border-color: green;
     box-shadow: 0 0 5px green;
 
 }
