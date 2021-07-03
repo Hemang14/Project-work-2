@@ -50,7 +50,7 @@ select * from users;
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `gambar`) VALUES
-(18, 'kingMidas', '$2b$10$V9St4zfZO2Tig5Id0.dCReCdZgxYOzZOHBqxN48Sdg.rb1ljg8Ur6', ''),
+(18, 'kingMidas', '$2b$10$9W8/vt2qOi2dEQtDsrDb9uNuIaqLUErWOYPUlUvoCP6xvZrZ94h7i', ''),
 (19, 'jackolatern', '$2b$10$akZWGVVWBNUDaPvFC/kWTudQy0BrSQYpBSRdDBIY5QSq3deafDuJC', '');
 /*
 (18, 'kingMidas', '$2b$10$UDQJLfH0X/WnkoCeQ/S7uOwzjvGCFF7Bg2qoG6cAwU3KFVAapujM2', ''),
@@ -66,6 +66,7 @@ CREATE TABLE user_review(
   username varchar(50),
   movie_name varchar(50),
   review varchar(200),
+  star int,
   PRIMARY KEY(id)
 );
 
@@ -80,36 +81,38 @@ slno int not null auto_increment,
  movie_show_name varchar(50),
  year_release year,
  genre varchar(30),
- count int,primary key(slno));
+ count int,
+ rating int,
+ primary key(slno));
 
 --
 -- Dumping data for movies table
 --
-insert into MOVIES_SHOWS(movie_show_indicator,movie_show_id,movie_show_name,year_release,genre,count) values
- (1,001,"Joker",2019,"crime/drama",1),
- (1,002,"Avengers end game",2019,"action",1),
- (1,003,"The Imitation Game",2014,"war/drama",1),
- (1,004,"Black Widow",2021,"Adventure/action",1),
- (1,005,"Avatar",2009,"Sci-fi",1),
- (1,006,"Oblivion",2013,"Sci-fi",1),
- (1,007,"The Fault in Our Stars",2014,"Romance/drama",1),
- (1,008,"Harry Potter",2010,"Family",1),
- (1,009,"White House Down",2013,"Action/Thriller",1),
- (1,010,"F9",2021,"Action/Adventure",1),
- (1,011,"X-MEN",2014,"Action/Adventure",1),
- (1,012,"The perks of being a wallflower",2012,"Romance/Drama",1),
- (2,001,"Stranger things",2016,"Sci-fi",1),
- (2,002,"Breaking bad",2008,"crime",1),
- (2,003,"Friends",1994,"comedy",1),
- (2,004,"Grey's Anatomy",2005,"Drama",1),
- (2,005,"Cursed",2020,"Action/fiction",1),
- (2,006,"Peaky Blinders",2013,"Crime",1),
- (2,007,"The Queen's Gambit",2020,"History",1),
- (2,008,"Dark",2017,"Thriller",1),
- (2,009,"Emily in Paris",2020,"Comedy/drama",1),
- (2,010,"Ozark",2017,"Drama",1),
- (2,011,"Lupin",2021,"Mystery",1),
- (2,012,"The falcon and the Winter Soldier",2021,"Action/feedback",1);
+insert into MOVIES_SHOWS(movie_show_indicator,movie_show_id,movie_show_name,year_release,genre,count,rating) values
+ (1,001,"Joker",2019,"crime/drama",1,3),
+ (1,002,"Avengers end game",2019,"action",1,5),
+ (1,003,"The Imitation Game",2014,"war/drama",1,4),
+ (1,004,"Black Widow",2021,"Adventure/action",1,5),
+ (1,005,"Avatar",2009,"Sci-fi",1,3),
+ (1,006,"Oblivion",2013,"Sci-fi",1,2),
+ (1,007,"The Fault in Our Stars",2014,"Romance/drama",1,1),
+ (1,008,"Harry Potter",2010,"Family",1,5),
+ (1,009,"White House Down",2013,"Action/Thriller",1,2),
+ (1,010,"F9",2021,"Action/Adventure",1,4),
+ (1,011,"X-MEN",2014,"Action/Adventure",1,1),
+ (1,012,"The perks of being a wallflower",2012,"Romance/Drama",1,4),
+ (2,001,"Stranger things",2016,"Sci-fi",1,5),
+ (2,002,"Breaking bad",2008,"crime",1,4),
+ (2,003,"Friends",1994,"comedy",1,2),
+ (2,004,"Grey's Anatomy",2005,"Drama",1,2),
+ (2,005,"Cursed",2020,"Action/fiction",1,5),
+ (2,006,"Peaky Blinders",2013,"Crime",1,3),
+ (2,007,"The Queen's Gambit",2020,"History",1,5),
+ (2,008,"Dark",2017,"Thriller",1,3),
+ (2,009,"Emily in Paris",2020,"Comedy/drama",1,3),
+ (2,010,"Ozark",2017,"Drama",1,4),
+ (2,011,"Lupin",2021,"Mystery",1,3),
+ (2,012,"The falcon and the Winter Soldier",2021,"Action/feedback",1,2);
 
  select * from MOVIES_SHOWS;
 
@@ -154,3 +157,14 @@ COMMIT;
 
 ALTER TABLE user_review
   MODIFY id int NOT NULL AUTO_INCREMENT;
+
+
+-- -------------------------
+
+-- select user_review.star,movies_shows.count from user_review , movies_shows where movies_shows.movie_show_id = user_review.id 
+
+-- update movies_shows,user_review set movies_shows.count = movies_shows.count+user_review.star where movies_shows.movie_show_id = user_review.id 
+
+update movies_shows,user_review set movies_shows.rating = movies_shows.rating+user_review.star where movies_shows.movie_show_name = user_review.movie_name; 
+
+select movie_show_name from movies_shows order by rating desc , year_release desc limit 5
