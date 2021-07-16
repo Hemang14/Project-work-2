@@ -62,11 +62,11 @@
 
 			<div class="sidebar__user-title">
 				<span>Admin</span>
-				<p>Admin Name</p> <!-- i will adjust name later -->
+				<p>Admin</p> <!-- i will adjust name later -->
 			</div>
 
 			<button class="sidebar__user-btn" type="button">
-				<img src="images/logout.png" width="30px" alt=""></i>
+				<a href="/logout" id="logout"><img src="images/logout.png" width="30px" alt=""></a></i>
 			</button>
 		</div>
 		<!-- end sidebar user -->
@@ -75,7 +75,7 @@
 		<div class="sidebar__nav-wrap">
 			<ul class="sidebar__nav">
 				<li class="sidebar__nav-item">
-					<a href="index.html" class="sidebar__nav-link sidebar__nav-link--active"><i class="icon ion-ios-keypad"></i> <span>Dashboard</span></a>
+					<a href="" class="sidebar__nav-link sidebar__nav-link--active"><i class="icon ion-ios-keypad"></i> <span>Dashboard</span></a>
 				</li>
 
 				<!-- <li class="sidebar__nav-item">
@@ -139,19 +139,37 @@
 				<!-- stats -->
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="stats">
-						<span>Unique views this month</span>
-						<p>5 678</p>
-						<i>	<img src="images/graph.png" width="60px" alt=""></i>
-					</div>
-				</div>
-				<!-- end stats -->
-
-				<!-- stats -->
-				<div class="col-12 col-sm-6 col-lg-3">
-					<div class="stats">
+						<%
+						if(total_user.length!=0){
+						var i=1;
+						total_user.forEach(function(data){
+						%>
 						<span>Total Number Of Users</span>
-						<p>172</p>
+						<p><%=data.total_users %></p>
+						<i>	<img src="images/graph.png" width="60px" alt=""></i>
+						<%  i++; }) %>
+						<% } else{ %>
+						<p>0<p>
+						<% } %>
+					</div>
+				</div>
+				<!-- end stats -->
+
+				<!-- stats -->
+				<div class="col-12 col-sm-6 col-lg-3">
+					<div class="stats">
+						<%
+						if(total_message.length!=0){
+						var i=1;
+						total_message.forEach(function(data){
+						%>
+						<span>Total Number Of Messages</span>
+						<p><%=data.total_messages %></p>
 						<i>	<img src="images/reel.png" width="60px" alt=""></i>
+						<%  i++; }) %>
+						<% } else{ %>
+						<p>0<p>
+						<% } %>
 					</div>
 				</div>
 				<!-- end stats -->
@@ -159,9 +177,18 @@
 				<!-- stats -->
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="stats">
+						<%
+						if(total_feedback.length!=0){
+						var i=1;
+						total_feedback.forEach(function(data){
+						%>
 						<span>Total feedback</span>
-						<p>2 573</p>
+						<p><%=data.total_feedbacks %></p>
 					<i>	<img src="images/comment.png" width="60px" alt=""></i>
+					<%  i++; }) %>
+					<% } else{ %>
+					<p>0<p>
+					<% } %>
 					</div>
 				</div>
 				<!-- end stats -->
@@ -169,9 +196,18 @@
 				<!-- stats -->
 				<div class="col-12 col-sm-6 col-lg-3">
 					<div class="stats">
+						<%
+						if(total_review.length!=0){
+						var i=1;
+						total_review.forEach(function(data){
+						%>
 						<span>Total reviews</span>
-						<p>1 021</p>
+						<p><%=data.total_reviews %></p>
 					<i>	<img src="images/star.png" width="60px" alt=""></i>
+					<%  i++; }) %>
+					<% } else{ %>
+					<p>0<p>
+					<% } %>
 					</div>
 				</div>
 				<!-- end stats -->
@@ -248,9 +284,11 @@
 								<thead>
 									<tr>
 										<th>ID</th>
-										<th>TITLE</th>
-										<th>CATEGORY</th>
-										<th>STATUS</th>
+										<th>Username</th>
+										<th>Video Clarity</th>
+										<th>Video Content</th>
+										<th>Communication</th>
+										<th>General Feedback</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -264,13 +302,18 @@
 											<div class="main__table-text"><%=i; %></div>
 										</td>
 										<td>
-											<div class="main__table-text"><a href="#"><%=data.movie_show_name %></a></div>
+											<div class="main__table-text"><a href="#"><%=data.username %></a></div>
 										</td>
 										<td>
-											<div class="main__table-text"><%=data.movie_show_indicator %></div>
+											<div class="main__table-text"><%=data.video_clarity %></div>
 										</td>
 										<td>
-											<div class="main__table-text main__table-text--rate"><i class="icon ion-ios-star"></i><%=data.rating %></div>
+											<div class="main__table-text"><%=data.video_content %></div>
+										</td>
+										<td>
+											<div class="main__table-text"><%=data.communication %></div>
+										</td><td>
+											<div class="main__table-text"><%=data.general_feedback %></div>
 										</td>
 									</tr>
 									<%  i++; }) %>
@@ -377,10 +420,69 @@
 											<div class="main__table-text"><%=data.movie_name %></div>
 										</td>
 										<td>
-											<div class="main__table-text main__table-text--rate"><i>	<img src="images/star.png" width="30px" alt=""></i><%=data.review %></div>
+											<div class="main__table-text main__table-text--rate"><%=data.review %></div>
 										</td>
 										<td>
-											<div class="main__table-text main__table-text--rate"><i class="icon ion-ios-star"></i><%=data.star %></div>
+											<div class="main__table-text main__table-text--rate"><i> <img src="images/star.png" width="30px" alt=""></i><%=data.star %></div>
+										</td>
+									</tr>
+									<%  i++; }) %>
+									<% } else{ %>
+											<tr>
+													<td colspan="7">No Data Found</td>
+											</tr>
+									<% } %>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- end dashbox -->
+
+				<!-- dashbox -->
+				<div class="col-12 col-xl-6">
+					<div class="dashbox">
+						<div class="dashbox__title">
+							<h3><i>	<img src="images/comment.png" width="30px" alt=""></i> Messages</h3>
+<!--
+							<div class="dashbox__wrap">
+								<a class="dashbox__refresh" href="#"><i class="icon ion-ios-refresh"></i></a>
+								<a class="dashbox__more" href="reviews.html">View All</a>
+							</div> -->
+						</div>
+
+						<div class="dashbox__table-wrap">
+							<table class="main__table main__table--dash">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th>USERNAME</th>
+										<th>Email ID</th>
+										<th>Address</th>
+										<th>Message</th>
+									</tr>
+								</thead>
+								<tbody>
+									<%
+									if(contactData.length!=0){
+									var i=1;
+									contactData.forEach(function(data){
+									%>
+									<tr>
+										<td>
+											<div class="main__table-text"><%=i; %></div>
+										</td>
+										<td>
+											<div class="main__table-text"><a href="#"><%=data.username %></a></div>
+										</td>
+										<td>
+											<div class="main__table-text"><%=data.email %></div>
+										</td>
+										<td>
+											<div class="main__table-text main__table-text--rate"><%=data.address %></div>
+										</td>
+										<td>
+											<div class="main__table-text main__table-text--rate"><%=data.message %></div>
 										</td>
 									</tr>
 									<%  i++; }) %>

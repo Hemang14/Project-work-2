@@ -109,17 +109,20 @@
                 </div>
             </div>
         </div>
-
-
             <!-- Change Movie -->
         <div class="dropdown show dropdown-film col-12 col-md-8" id="change-film-modal">
             <a class="btn btn-secondary dropdown-toggle" style=" font-family: 'Montserrat';padding:10px;" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trending Movies</a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="#" id="joker" value="joker">Joker</a>
-                <a class="dropdown-item" href="#" id="schematics" value="schematics">Schematics</a>
-                <a class="dropdown-item" href="#" id="nahi-meme" value="nahi-meme">nahi-meme</a>
-
-
+              <%
+              if(trendingData.length!=0){
+              var i=1;
+              trendingData.forEach(function(data){
+              %>
+                <a  class="dropdown-item" href="#" id="joker" value="joker"><%=data.movie_show_name %></a>
+                <%  i++; }) %>
+                <% } else{ %>
+                <a class="dropdown-item" href="#" id="no data" value="nahi-meme">No Trending Movie</a>
+                <% } %>
             </div>
         </div>
 
