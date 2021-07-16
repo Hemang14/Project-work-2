@@ -13,6 +13,21 @@ p {
   padding: 5%;
 }
 
+.contact-container{
+  background-color: #7c4789;
+  color: #fff;
+  text-align: left;
+}
+.container-about{
+  background-color: #7c4789;
+  color: #fff;
+  text-align: left;
+}
+.container-contact{
+border: solid black;
+background-color: #DDDDDD;
+}
+
 .big-heading {
   font-family: "Montserrat-Black";
   font-size: 3.5rem;
@@ -55,34 +70,29 @@ p {
   font-family: "Montserrat-Light";
 }
 #title {
-  /*background-color: #440a67;*/
   background-color: #350b40;
   color: #fff;
   text-align: left;
 }
 #features{
-  /*background-color: #ad6c80;*/
   background-color: #7c4789;
   position: relative;
   color: black;
 }
-/*#movie-slider{
-  border-top: white;
-  background-color: #350b40;
-  padding: 4% 9%;
-}*/
+
 #movie-slider-section{
   border-top: white;
   background-color: #350b40;
   padding: 4% 9%;
 }
-#show-slider{
+#show-slider-section{
   border-top: white;
   background-color: #350b40;
   padding: 4% 9%;
 }
 #footerid{
-  background-color: white;
+  background-color: #350b40;
+  color: white;
 }
 .features-para{
   color: black;
@@ -124,6 +134,42 @@ height: 20rem;
 .control-buttons{
   padding: 3rem;
 }
+
+/*Review page css*/
+.review-title{
+  font-family: inherit;
+  color: black;
+}
+#review-section {
+  background-color: #7c4789;
+  padding:4% 10% 13% 10%;
+}
+.testimonial-text {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 600;
+  opacity: 1;
+}
+.review-heading{
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: black;
+  font-size: 2rem;
+  line-height: 1.5;
+  padding-bottom: 2%;
+}
+.carousal-bgimage{
+  position: relative;
+  /*background-image: url("/images/homepage/filmStrip.jpg");*/
+  background-color: white;
+  background-size: 75%;
+  background-position: center;
+  opacity: 0.6;
+}
+/*.review-control{
+background-color: black;
+}*/
 
 /* Macbook code starts */
 .macbook {
