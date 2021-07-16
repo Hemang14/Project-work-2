@@ -26,7 +26,7 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` VALUES
-(1, 18, 'kingMidas', 690, 1, '', 'master'),
+(1, 18, 'Admin', 690, 1, '', 'master'),
 (2, 19, 'jackolatern', 690, 1, '', 'user');
 select * from room;
 
@@ -70,7 +70,34 @@ CREATE TABLE user_review(
   PRIMARY KEY(id)
 );
 
-
+--
+-- Table structure for table contactus
+--
+CREATE TABLE contact_info(
+  id int NOT NULL,
+  email varchar(50),
+  address varchar(150),
+  username varchar(50),
+  message varchar(200),
+  PRIMARY KEY(id)
+);
+select * from contact_info;
+--
+-- Table Structure for table feedback
+--
+CREATE TABLE user_feedback(
+  id int NOT NULL,
+  username varchar(50),
+  email varchar(50),
+  country varchar(30),
+  video_clarity varchar(10),
+  video_content varchar(10),
+  communication varchar(10),
+  general_feedback varchar(200),
+  PRIMARY KEY(id)
+);
+select * from user_feedback;
+--
 --
 -- Table Structure for table 'Movies/show'
 --
@@ -143,7 +170,11 @@ ALTER TABLE `users`
 ALTER TABLE `room`
   MODIFY `serial_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
-
+  --
+ALTER TABLE `user_feedback`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+  ALTER TABLE `contact_info`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -161,10 +192,10 @@ ALTER TABLE user_review
 
 -- -------------------------
 
--- select user_review.star,movies_shows.count from user_review , movies_shows where movies_shows.movie_show_id = user_review.id 
+-- select user_review.star,movies_shows.count from user_review , movies_shows where movies_shows.movie_show_id = user_review.id
 
--- update movies_shows,user_review set movies_shows.count = movies_shows.count+user_review.star where movies_shows.movie_show_id = user_review.id 
+-- update movies_shows,user_review set movies_shows.count = movies_shows.count+user_review.star where movies_shows.movie_show_id = user_review.id
 
-update movies_shows,user_review set movies_shows.rating = movies_shows.rating+user_review.star where movies_shows.movie_show_name = user_review.movie_name; 
+update movies_shows,user_review set movies_shows.rating = movies_shows.rating+user_review.star where movies_shows.movie_show_name = user_review.movie_name;
 
 select movie_show_name from movies_shows order by rating desc , year_release desc limit 5
