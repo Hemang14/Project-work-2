@@ -26,8 +26,8 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` VALUES
-(1, 18, 'Admin', 690, 1, '', 'master'),
-(2, 19, 'jackolatern', 690, 1, '', 'user');
+(18, 'Admin', 690, 1, '', 'master'),
+(19, 'jackolatern', 690, 1, '', 'user');
 select * from room;
 
 select count(room_number) as Number_Of_Users_In_Room from room where room_number=697;
@@ -52,6 +52,7 @@ select * from users;
 INSERT INTO `users` (`id`, `username`, `password`, `gambar`) VALUES
 (18, 'kingMidas', '$2b$10$9W8/vt2qOi2dEQtDsrDb9uNuIaqLUErWOYPUlUvoCP6xvZrZ94h7i', ''),
 (19, 'jackolatern', '$2b$10$akZWGVVWBNUDaPvFC/kWTudQy0BrSQYpBSRdDBIY5QSq3deafDuJC', '');
+(20, 'Admin','$2b$10$cBZ4G/w1CrjGMyof48qa9.8ftpOXs7tuusV4JjbTcjf.1/aDLm5uy','');
 /*
 (18, 'kingMidas', '$2b$10$UDQJLfH0X/WnkoCeQ/S7uOwzjvGCFF7Bg2qoG6cAwU3KFVAapujM2', ''),
 (19, 'jackolatern', 'jackolatern', '');
