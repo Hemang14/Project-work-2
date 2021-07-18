@@ -13,11 +13,8 @@ START TRANSACTION;
 --
 
 CREATE TABLE `room` (
-  `serial_id` int NOT NULL,
   `user_name` varchar(128) NOT NULL,
   `room_number` int NOT NULL,
-  `movie_id` varchar(128) NOT NULL,
-  `gambar` varchar(128) NOT NULL,
   `roles` varchar(128) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -26,8 +23,8 @@ CREATE TABLE `room` (
 --
 
 INSERT INTO `room` VALUES
-(18, 'Admin', 690, 1, '', 'master'),
-(19, 'jackolatern', 690, 1, '', 'user');
+('Admin', 690, 'master'),
+('jackolatern', 690, 'user');
 select * from room;
 
 select count(room_number) as Number_Of_Users_In_Room from room where room_number=697;
@@ -50,9 +47,8 @@ select * from users;
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `gambar`) VALUES
-(18, 'kingMidas', '$2b$10$9W8/vt2qOi2dEQtDsrDb9uNuIaqLUErWOYPUlUvoCP6xvZrZ94h7i', ''),
+(18, 'Admin', '$2b$10$cBZ4G/w1CrjGMyof48qa9.8ftpOXs7tuusV4JjbTcjf.1/aDLm5uy', ''),
 (19, 'jackolatern', '$2b$10$akZWGVVWBNUDaPvFC/kWTudQy0BrSQYpBSRdDBIY5QSq3deafDuJC', '');
-(20, 'Admin','$2b$10$cBZ4G/w1CrjGMyof48qa9.8ftpOXs7tuusV4JjbTcjf.1/aDLm5uy','');
 /*
 (18, 'kingMidas', '$2b$10$UDQJLfH0X/WnkoCeQ/S7uOwzjvGCFF7Bg2qoG6cAwU3KFVAapujM2', ''),
 (19, 'jackolatern', 'jackolatern', '');
@@ -90,10 +86,10 @@ CREATE TABLE user_feedback(
   id int NOT NULL,
   username varchar(50),
   email varchar(50),
-  country varchar(30),
-  video_clarity varchar(10),
-  video_content varchar(10),
-  communication varchar(10),
+  country varchar(50),
+  video_clarity varchar(50),
+  video_content varchar(50),
+  communication varchar(50),
   general_feedback varchar(200),
   PRIMARY KEY(id)
 );
@@ -169,7 +165,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `serial_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `serial_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
   --
 ALTER TABLE `user_feedback`
@@ -191,12 +187,12 @@ ALTER TABLE user_review
   MODIFY id int NOT NULL AUTO_INCREMENT;
 
 
--- -------------------------
+-- ----------- TRIAL --------------
 
 -- select user_review.star,movies_shows.count from user_review , movies_shows where movies_shows.movie_show_id = user_review.id
 
 -- update movies_shows,user_review set movies_shows.count = movies_shows.count+user_review.star where movies_shows.movie_show_id = user_review.id
 
-update movies_shows,user_review set movies_shows.rating = movies_shows.rating+user_review.star where movies_shows.movie_show_name = user_review.movie_name;
+-- update movies_shows,user_review set movies_shows.rating = movies_shows.rating+user_review.star where movies_shows.movie_show_name = user_review.movie_name;
 
-select movie_show_name from movies_shows order by rating desc , year_release desc limit 5
+-- select movie_show_name from movies_shows order by rating desc , year_release desc limit 5;

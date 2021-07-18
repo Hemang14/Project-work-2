@@ -137,7 +137,7 @@ router.post('/review', function(req, res, next) {
   db.query(sql1, userDetails,function (err, data) {
     db.query(sql2,function(err,result,fields){
       if (err) throw err;
-        console.log("User review dat is inserted successfully ");
+        console.log("User review data is inserted successfully ");
         console.log(result);
       });
   });
@@ -175,7 +175,7 @@ router.post('/feedback', function(req, res, next) {
       if (err) throw err;
          console.log("User feedback data is inserted successfully ");
   });
- res.redirect('/feedback');  // redirect to create room page after inserting the data
+ res.redirect('/about');  // redirect to create room page after inserting the data
 });
 //feedback ends
 /*router.get('/', function(req, res, next) {
