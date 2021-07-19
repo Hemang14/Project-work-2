@@ -9,6 +9,21 @@ body {
   height: 100vh;
   margin: 0;
 }
+a:link{
+  color:white;
+}
+a:visited{
+  color:white;
+}
+a:hover{
+  color:purple;
+}
+a:active{
+  color:pink;
+}
+a{
+	text-decoration:none;
+}
 .person {
   align-items: center;
   display: flex;
