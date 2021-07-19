@@ -133,7 +133,7 @@ router.post('/review', function(req, res, next) {
 
   // insert form data into user_review table
   var sql1= 'INSERT INTO user_review SET ?';
-  var sql2='update movies_shows,user_review set movies_shows.rating = movies_shows.rating+user_review.star where movies_shows.movie_show_name = user_review.movie_name';
+  var sql2='update movies_shows,user_review set movies_shows.rating = movies_shows.rating+user_review.star where movies_shows.movie_show_name == user_review.movie_name';
   db.query(sql1, userDetails,function (err, data) {
     db.query(sql2,function(err,result,fields){
       if (err) throw err;

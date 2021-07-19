@@ -18,8 +18,11 @@
       <h1 style="font-size: 70px;">Feedback Form</h1>
       <p style="font-size: 20px;">For any enquiries, please elmail us using the form below</p>
     </div>
+    <div id="nav_bar" style="text-align: center;color:white;">
+      <p><a href="./">Home</a> &nbsp &nbsp <a href="./about">About Us</a> &nbsp &nbsp<a href="./contact">Contact Us</a> &nbsp &nbsp <a href="./login">Login</a> &nbsp &nbsp</p>
+    </div>
   </div>
-<div class="container">
+<div class="container" style="color:white">
   <form action="/feedback" method="POST">
     <div id="form-main">
   <div id="form-div">
@@ -39,7 +42,7 @@
         <input name="country" type="text" id="username" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Country" required/>
       </p>
 
-        <label style="font-size: 20px;" for="Video Clarity ">Video Clearity</label><br><br>
+        <label style="font-size: 20px;" for="Video Clarity ">Video Clarity</label><br><br>
         <select id="feedback" name="video_clarity" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" required>
             <option value="none">Select option</option>
           <option value="good">good</option>
@@ -58,7 +61,7 @@
         <option value="best">best</option>
         </select>
 
-        <label style="font-size: 20px;" for="Room Communication and Chat">Video Clearity</label><br><br>
+        <label style="font-size: 20px;" for="Room Communication and Chat">Room Communication and Chat</label><br><br>
         <select id="feedback" name="communication" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" required>
         <option value="none">Select option</option>
         <option value="good">good</option>
@@ -68,7 +71,7 @@
         </select>
 
 
-      <label style="font-size: 20px;"  for="feed_back">Feed Back</label>
+      <label style="font-size: 20px;"  for="feed_back">FeedBack</label>
       <p class="text">
         <textarea id="subject" name="general_feedback" placeholder="Write something.." class="validate[required,length[6,300]] feedback-input" required ></textarea>
       </p>
