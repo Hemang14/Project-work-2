@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include layouts/head %>
+        <title>Welcome</title>
+        <!-- Icons For Footer -->
+        <script src="https://kit.fontawesome.com/c0b0b3125f.js" crossorigin="anonymous"></script>
+        <!--FIKA FONT -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&display=swap" rel="stylesheet">
+        <!--MOVIES/SHOWS FONT -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <!-- Welcome message -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="./style.css">
+        <!-- For Star Icon in Review Form -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    </head>
+
+    <!-- <body class="background" style="background-image: url('/images/bg1.jpg');"> -->
+    <body class="background" style="background-color: #351F39;">
+
+      <video autoplay muted loop id="myVideo">
+        <source src="/movie/trailer2.mp4#t=136" type="video/mp4">
+      </video>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+            <a class="navbar-brand" href="./" style="font-family: 'Nova Cut';font-weight:bold;font-size:50px"><img style="width: 140px;height:100px;"src="/images/fika_logo3.png"></a>            
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                      <div id="stopwatch">00:00:00</div>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"><%= name %></a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a onclick="resetTimer()" class="dropdown-item" href="/logout" id="logout">Logout</a>
+                            </div>
+                            <!-- for stopwatch --><script  src="./script.js"></script>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Welcome message-->
+        <div class="welmsg">
+			      <div class="os-phrases" id="os-phrases">
+				          <h2>Sometimes it's better to</h2>
+				          <h2>Be Together</h2>
+				          <h2>Be You</h2>
+				          <h2>Be There</h2>
+                  <h2>This Fall</h2>
+				          <h2>Spend time</h2>
+				          <h2>With People</h2>
+				          <h2>You care about</h2>
+                </div>
+		        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.6.1/jquery.lettering.min.js'></script><script  src="/javascripts/script.js"></script>
+        <!--WELCOME message ends-->
+
+        <div id="modal-default">
+            <!-- Foto Profil -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="/images/profile/bear.jpg" alt="Profile Picture" class="img-thumbnail">
+                        <div class="hi">
+                            <p> Hi <%= name %> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jumbotron -->
+            <div class="jumbotron2 jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4" style="font-family: 'Nova Cut';font-weight:bold">WELCOME CINEPHILE</h1>
+                    <button onclick="startTimer()" class="btn-join make-a-room"> Make a Room </button>
+                    <p><input type="text" id="room-input" placeholder="Insert the room number" autocomplete="off" style="position:relative;margin-bottom:-150px;overflow: visible;z-index:999;"/></p>
+                    <button onclick="startTimer()" class="btn-join join-room"> Join </button>
+                    <span style="margin-left:250px;margin-bottom:90%"id='message'></span>
+                </div>
+            </div>
+        </div>
+
+            <!-- Movie -->
+        <video controls="controls" class="col-12 col-md-8" src="/movie/<%= film %>.mp4" id="video"></video>
+        <canvas id="preview" style="display: none;"></canvas>
+        <audio id="audio" style="display: none;">
+            <source src="/audio/<%= film %>.ogg" type="audio/ogg">
+        </audio>
+        <!-- Movie -->
+        <img id="video-stream" controls="controls" class="col-12 col-md-8">
+
+
+            <!-- Chat -->
+        <div class="d-flex flex-row-reverse" id="chat-modal">
+            <div class="chatbox">
+                <div class="chatlogs" id="messages"></div>
+                <div class="chat-form">
+                    <input type="text" id="chat-input" placeholder="Say something nice" autocomplete="off"/>
+                    <button id="button">Send</button>
+                </div>
+            </div>
+        </div>
+            <!-- Change Movie -->
+        <div class="dropdown show dropdown-film col-12 col-md-8" id="change-film-modal">
+            <a class="btn btn-secondary dropdown-toggle" style=" font-family: 'Montserrat';padding:10px;" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trending Movies</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <%
+              if(trendingData.length!=0){
+              var i=1;
+              trendingData.forEach(function(data){
+              %>
+                <a  class="dropdown-item" href="#" id="joker" value="joker"><%=data.movie_show_name %></a>
+                <%  i++; }) %>
+                <% } else{ %>
+                <a class="dropdown-item" href="#" id="no data" value="nahi-meme">No Trending Movie</a>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="dropdown show" id="change-room-master">
+            <a class="btn btn-secondary dropdown-toggle" style=" font-family: 'Montserrat';padding:10px;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Change Room Master
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdownChangeRoomMaster">
+              <!-- <li class="dropdown-item" data-id="..." href="#">Action</li> -->
+            </div>
+          </div>
+            <!--<div class="filmm"><%=film%></div>-->
+            <!-- Review card starts -->
+            <div id ="rev_btn" class="flip-card_rev">
+              <div class="flip-card-inner_rev">
+                <div class="flip-card-front_rev">
+                <div style="font-family:'Nova Cut';font-size:20px;font-weight:bold;margin-left:30px;">
+                  <br>Enjoyed Watching!!
+                  <br><br>Got a minute??
+                  <br><br>Drop a Review!!
+                </div>
+                </div>
+                <div class="flip-card-back_rev">
+                    <br><br><br><button class="rev_Button" onclick="openrev_form()"><strong>Review</strong></button>
+                </div>
+              </div>
+            </div>
+            <!--review form starts-->
+            <div class="rev_Popup">
+              <div class="formrev_Popup" id="popup_revForm">
+                <form action="/review" method="POST" class="rev_formContainer">
+                  <h2 style="text-align:center">Drop a Review </h2>
+                  <label for="username">
+                    <strong>Username</strong>
+                  </label><br>
+                  <input type="text" id="username" placeholder="Your username" value="<%= name %>" name="username" required>
+                  <br><label for="film name">
+                    <strong>Movie/Show Name</strong>
+                  </label><br>
+                  <input type="text" id="movie_name" placeholder="Movie/Show Name" placeholder="Movie/Show Name" name="movie_name" required>
+                  <br><label for="movie_review">
+                    <strong>Review</strong>
+                  </label><br>
+                  <textarea type="text" rows = "4" cols = "60" placeholder="Enter your review..." name = "review" onkeyup="countChars(this)" required></textarea>
+                  <div class="float-review">
+                    <div style="color:white;text-align: right;float:right" id="charNum">0/200</div>
+                    <div class="stars" style="float:left" required>
+                      <input class="star star-5" id="star-5" type="radio" value="5" name="star"/>
+                      <label class="star star-5" for="star-5"></label>
+                      <input class="star star-4" id="star-4" type="radio" value="4" name="star"/>
+                      <label class="star star-4" for="star-4"></label>
+                      <input class="star star-3" id="star-3" type="radio" value="3"name="star"/>
+                      <label class="star star-3" for="star-3"></label>
+                      <input class="star star-2" id="star-2" type="radio"value="2" name="star"/>
+                      <label class="star star-2" for="star-2"></label>
+                      <input class="star star-1" id="star-1" type="radio"value="1" name="star"/>
+                      <label class="star star-1" for="star-1"></label>
+                    </div>
+                </div>
+                  <button type="submit" class="rev_btn">Submit</button>
+                  <button type="button" class="rev_btn cancel" onclick="closerev_Form()">Close</button>
+                </form>
+                <!-- script for character count in review form -->
+                <script>
+                  function countChars(obj){
+                    var maxLength = 200;
+                    var strLength = obj.value.length;
+                    if(strLength > maxLength){
+                      document.getElementById("charNum").innerHTML = '<span style="color: red;">'+strLength+' out of '+maxLength+' characters</span>';
+                    }else{
+                      document.getElementById("charNum").innerHTML = strLength+'/'+maxLength;
+                    }
+                  }
+              </script>
+              </div>
+            </div>
+            <script>
+                function openrev_form() {
+                  document.getElementById("popup_revForm").style.display = "block";
+                }
+                function closerev_Form() {
+                  document.getElementById("popup_revForm").style.display = "none";
+                }
+            </script>
+            <!--review form ends-->
+            <!-- Review Card ends -->
+            <!-- *******************TRYING**************** -->
+            <br><br>
+            <div id ="mov_thumbnails">
+              <div class="m_movies"  style="background-color:#301B3F;opacity:0.8">
+            <br><br>
+            <h1 style="font-family: 'Anton';font-weight: bold;color:white;margin-left:590px">MOVIES</h1>
+            <div class="row">
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/joker.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                      </div>
+                      <div class="flip-card-back" style="font-size:8px">
+                        <h4><a href="#" id="Tom" value="Tom">Tom</a></h4>
+                        <p>R | 2h 2min | Crime, Drama, Thriller | 4 October 2019</p>
+                        <p>IMDB: 8.4/10 | ROTTEN TAMATOES: 68%</p>
+                        <p><b>Director</b>: Todd Phillips</p>
+                        <p><b>Writers:</b> Todd Phillips, Scott Silver</p>
+                        <p><b>Stars:</b> Joaquin Phoenix, Robert De Niro, Zazie Beetz</p>
+                        <p>In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.<p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/avengersendgame.jpg" alt="Avengers Endgame" style="height:250px;width:200px;border-radius:20px">
+                      </div>
+                      <div class="flip-card-back" style="font-size:8px">
+                        <h4><a href="#" id="Avenger" value="Avenger">Avenger</a><br>Endgame</h4>
+                        <p>PG-13 | 3h 1min | Action, Adventure, Drama | 26 April 2019</p>
+                        <p><b>Directors</b>: Anthony Russo, Joe Russo</p>
+                        <p><b>Writers</b>: Christopher Markus, Stephen McFeely</p>
+                        <p><b>Stars</b>: Robert Downey Jr., Chris Evans, Mark Ruffalo</p>
+                        <p>After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/imitationgame.jpg" alt="Imitationgame" style="height:250px;width:200px;border-radius:20px">
+                      </div>
+                      <div class="flip-card-back" style="font-size:8px">
+                        <h4 style="text-align:center"><a href="#" id="imitation game" value="imitation game">The Imitation</a><br>Game</h4>
+                        <p>UA | 1h 54min | Biography,Drama,Thriller| 28 November 2014</p>
+                        <p><b>Directors</b>: Morten Tyldum</p>
+                        <p><b>Writers</b>: Graham MooreAndrew Hodges</p>
+                        <p><b>Stars</b>:Benedict Cumberbatch, Keira Knightley</p>
+                        <p>It is based on the real life story of legendary cryptanalyst Alan Turing, the film portrays the nail-biting race against time by Turing and his brilliant team of code-breakers at Britain's top-secret Government Code and Cypher School at Bletchley Park.</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/blackwidow.jpg" alt="Blackwidow" style="height:250px;width:200px;border-radius:20px">
+                      </div>
+                      <div class="flip-card-back" style="font-size:8px">
+                        <h4 style="text-align:center"><a href="#" id="blackwidow" value="blackwidow">BlackWidow</a></h4>
+                        <p>PG-13 | 2h 13min | Action,Adventure,Sci-Fi | 7 July 2021</p>
+                        <p><b>Directors</b>: Cate Shortland</p>
+                        <p><b>Writers</b>: Jac Schaeffer,Ned Benson,Eric Pearson</p>
+                        <p><b>Stars</b>:Scarlett Johansson,Florence Pugh,David Harbour</p>
+                        <p>At birth the Black Widow (aka Natasha Romanova) is given to the KGB, which grooms her to become its ultimate operative. When the U.S.S.R. breaks up, the government tries to kill her as the action moves to present-day New York, where she is a freelance operative.</p>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="zoom">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                        <img src="/images/avtar.jpg" alt="Avatar" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+                          <h4 style="text-align:center"><a href="#" id="Avatar" value="Avatar">Avatar</a></h4>
+                          <p>UA | 2h 42min | Action,Adventure,Fantasy | 18 December 2009</p>
+                          <p><b>Directors</b>: James Cameron</p>
+                          <p><b>Writers</b>: James Cameron</p>
+                          <p><b>Stars</b>:Sam Worthington,Zoe Saldana,Sigourney Weaver</p>
+                          <p>A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/oblivion.jpg" alt="Oblivion" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+                          <h4 style="text-align:center"><a href="#" id="Oblivion" value="Oblivion">Oblivion</a></h4>
+                          <p>UA | 2h 4min | Action,Adventure,Sci-Fi| 12 April 2013</p>
+                          <p><b>Directors</b>: Joseph Kosinski</p>
+                          <p><b>Writers</b>: Karl Gajdusek,Michael Arndt,Joseph Kosinski</p>
+                          <p><b>Stars</b>: Tom Cruise,Morgan Freeman,Andrea Riseborough</p>
+                          <p>One of the few remaining drone repairmen assigned to Earth, its surface devastated after decades of war with the alien Scavs, discovers a crashed spacecraft with contents that bring into question everything he believed about the war, and may even put the fate of mankind in his hands.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                    <br><br>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/thefaultinourstars.jpg" alt="thefaultinourstars" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4 style="text-align:center"><a href="#" id="The Fault In Our Stars" value="thefaultinourstars">The Fault In Our Stars</a></h4>
+                          <p>UA | 2h 6min | Drama, Romance | 4 July 2014</p>
+                          <p><b>Directors</b>: Josh Boone</p>
+                          <p><b>Writers</b>: Scott Neustadter,Michael H. Weber,John Green</p>
+                          <p><b>Stars</b>: Shailene Woodley,Ansel Elgort,Nat Wolff</p>
+                          <p>Hazel and Augustus are two teenagers who share an acerbic wit, a disdain for the conventional, and a love that sweeps them on a journey. Their relationship is all the more miraculous, given that Hazel's other constant companion is an oxygen tank.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/harrypotter.jpg" alt="harrypotter" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4 style="text-align:center"><a href="#" id="Harry Potter" value="harrypotter">Harry Potter</a></h4>
+                          <p>UA | 2h 18min | Action,Adventure,Family | 13 July 2007</p>
+                          <p><b>Directors</b>: David Yates</p>
+                          <p><b>Writers</b>: Michael Goldenberg,J.K. Rowling</p>
+                          <p><b>Stars</b>: Daniel Radcliffe,Emma Watson,Rupert Grint</p>
+                          <p>After a lonely summer on Privet Drive, Harry (Daniel Radcliffe) returns to a Hogwarts full of ill-fortune. Few of students and parents believe him or Dumbledore (Sir Michael Gambon) that Voldemort (Ralph Fiennes) is really back.The ministry had decided to step in by appointing a new Defense Against the Dark Arts teacher, Professor Dolores Umbridge (Imelda Staunton). </p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/whitehousedown.jpg" alt="whitehousedown" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4 style="text-align:center"><a href="#" id="White House Down" value="whitehousedown">White House Down</a></h4>
+                          <p>UA | 2h 11min | Action,Drama,Thriller | 26 June 2013</p>
+                          <p><b>Directors</b>: Roland Emmerich</p>
+                          <p><b>Writers</b>: James Vanderbilt</p>
+                          <p><b>Stars</b>: Channing Tatum,Maggie Gyllenhaal,Jamie Foxx</p>
+                          <p>Capitol Policeman John Cale has just been denied his dream job with the Secret Service of protecting President James Sawyer. Not wanting to let down his little girl with the news, he takes her on a tour of the White House, when the complex is overtaken by a heavily armed paramilitary group.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/f9.jpg" alt="f9" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4 style="text-align:center"><a href="#" id="Fast and Furious 9" value="F9">Fast And Furious 9</a></h4>
+                          <p>UA | 2h 25min | Action,Adventure,Crime | June 2021</p>
+                          <p><b>Directors</b>: Justin Lin</p>
+                          <p><b>Writers</b>: Daniel Casey,Justin Lin,Alfredo Botello</p>
+                          <p><b>Stars</b>: Vin Diesel,Michelle Rodriguez,Jordana Brewster</p>
+                          <p>Coming Soon </p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/xmen.jpg" alt="xmen" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                        <h4 style="text-align:center"><a href="#" id="xmen" value="xmen">X-Men</a></h4>
+                        <p>UA | 2h 12min | Action,Adventure,Sci-Fi | 23 May 2014</p>
+                        <p><b>Directors</b>: Bryan Singer</p>
+                        <p><b>Writers</b>: Simon Kinberg,Jane Goldman,Matthew Vaughn</p>
+                        <p><b>Stars</b>: Patrick Stewart,Ian McKellen,Hugh Jackman</p>
+                        <p>In the future, the mutants and the humans who help them are slaughtered by powerful robots named Sentinels. Professor Xavier, Wolverine, Magneto, Storm, Kitty Pryde, and her friends meet at a monastery in China and Xavier explains that the invincible Sentinels were created using the DNA of Mystique that was captured in 1973. </p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/perks.jpg" alt="wallflower" style="height:250px;width:200px;border-radius:20px">
+
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4 style="text-align:center"><a href="#" id="perks" value="perks">The Perks of Being A WallFlower</a></h4>
+                          <p>UA | 1h 43min | Drama,Romance | November 2012</p>
+                          <p><b>Directors</b>: Stephen Chbosky</p>
+                          <p><b>Writers</b>: Stephen Chbosky</p>
+                          <p><b>Stars</b>: Logan Lerman,Emma Watson,Ezra Miller</p>
+                          <p>Based on the novel written by Stephen Chbosky, this is about 15-year-old Charlie (Logan Lerman), an endearing and naive outsider, coping with first love (Emma Watson), the suicide of his best friend.</p>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+              <!-- SHOWS-->
+
+              <br><br>
+              <div id="s_shows">
+              <h1 style="font-family: 'Anton';font-weight: bold;color:white;margin-left:590px">SHOWS</h1>
+              <div class="row">
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/strangerthings.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>SHOW</h4>
+                          <p>SHOW DETAILS</p>
+                          <p>SHOW GIST</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/breakingbad.jpeg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>SHOW</h4>
+                          <p>SHOW DETAILS</p>
+                          <p>SHOW GIST</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/friends.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>SHOW</h4>
+                          <p>SHOW DETAILS</p>
+                          <p>SHOW GIST</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/greysanatomy.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+                        </div>
+                        <div class="flip-card-back" style="font-size:8px">
+
+                          <h4>SHOW</h4>
+                          <p>SHOW DETAILS</p>
+                          <p>SHOW GIST</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div class="zoom">
+                    <div class="flip-card">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/images/cursed.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>SHOW</h4>
+                            <p>SHOW DETAILS</p>
+                            <p>SHOW GIST</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/peakyblinders.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>SHOW</h4>
+                            <p>SHOW DETAILS</p>
+                            <p>SHOW GIST</p>
+                          </div>
+                        </div>
+                      </div>
+                      <br><br>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/queensgambit.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>SHOW</h4>
+                            <p>SHOW DETAILS</p>
+                            <p>SHOW GIST</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/dark.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>SHOW</h4>
+                            <p>SHOW DETAILS</p>
+                            <p>SHOW GIST</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/emilyinparis.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>SHOW</h4>
+                            <p>SHOW DETAILS</p>
+                            <p>SHOW GIST</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/ozark.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>SHOW</h4>
+                            <p>SHOW DETAILS</p>
+                            <p>SHOW GIST</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/lupin.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>SHOW</h4>
+                            <p>SHOW DETAILS</p>
+                            <p>SHOW GIST</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="column">
+                    <div class="zoom">
+                      <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img src="/images/falcon.jpg" alt="Joker" style="height:250px;width:200px;border-radius:20px">
+
+                          </div>
+                          <div class="flip-card-back" style="font-size:8px">
+
+                            <h4>SHOW</h4>
+                            <p>SHOW DETAILS</p>
+                            <p>SHOW GIST</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+            </div>
+          </div>
+            <!--
+            <div style="float:left;padding:15px;">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/Xc5n49aEhwc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div style="float:left;padding:15px;">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/aphPRcV61S8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>-->
+          <br>
+          <br><br>
+
+          <div id="b_bottom" style="text-align:center;padding:80px;background-color:#350b40;color:white;height:200px;">
+            <footer id="footerid">
+              <div class="container-fluid">
+                <i class="social-icon fab fa-facebook-f"></i>
+                <i class="social-icon fab fa-twitter"></i>
+                <i class="social-icon fab fa-instagram"></i>
+                <i class="social-icon fas fa-envelope"></i>
+                <p>© Copyright 2021 Fika</p>
+              </div>
+            </footer>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="homePage.js"></script>
+
+        <% include layouts/foot %>
+        <script type="text/javascript" src="/javascripts/livestream.js"></script>
+    </body>
+</html>
