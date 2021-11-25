@@ -1,0 +1,759 @@
+body {
+  font-family: "Montserrat";
+  text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat-Bold";
+}
+p {
+  color: #8f8f8f;
+}
+
+.container-fluid{
+  padding: 5%;
+}
+
+.contact-container{
+  background-color: #7c4789;
+  color: #fff;
+  text-align: left;
+}
+.container-about{
+  background-color: #7c4789;
+  color: #fff;
+  text-align: left;
+}
+.container-contact{
+border: solid black;
+background-color: #DDDDDD;
+}
+
+.big-heading {
+  font-family: "Montserrat-Black";
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+.headings{
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: white;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+.signup-button {
+  margin-left: 40%;
+  margin-top: 20px;
+  padding: 2px;
+}
+
+.title-video {
+  position: relative;
+  left: 25%;
+}
+.navbar {
+  padding: 0 0 4.5rem;
+}
+
+.navbar-brand {
+  font-family: "Zen Dots";
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat-Light";
+}
+#title {
+  background-color: #350b40;
+  color: #fff;
+  text-align: left;
+}
+#features{
+  background-color: #7c4789;
+  position: relative;
+  color: black;
+}
+
+#movie-slider-section{
+  border-top: white;
+  background-color: #350b40;
+  padding: 4% 9%;
+}
+#show-slider-section{
+  border-top: white;
+  background-color: #350b40;
+  padding: 4% 9%;
+}
+#footerid{
+  background-color: #350b40;
+  color: white;
+}
+.features-para{
+  color: black;
+  font-family: "Montserrat";
+  font-weight: 300;
+}
+
+.feature-title {
+  font-size: 1.5rem;
+}
+
+.feature-box {
+  padding: 4.5%;
+}
+
+.icon {
+  color: #0f0f0f;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #957dad;
+}
+
+.card-individual{
+  text-align: center;
+  margin: 1rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
+}
+.card-individual:hover {
+    background-color: #F8F8FF;
+    transform: scale(1.02);
+}
+.movie-img{
+margin: auto;
+width: 14rem;
+height: 20rem;
+}
+.control-buttons{
+  padding: 3rem;
+}
+
+/*Review page css*/
+.review-title{
+  font-family: inherit;
+  color: black;
+}
+#review-section {
+  background-color: #7c4789;
+  padding:4% 10% 13% 10%;
+
+}
+.testimonial-text {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 600;
+  opacity: 1;
+}
+.review-heading{
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: black;
+  font-size: 2rem;
+  line-height: 1.5;
+  padding-bottom: 2%;
+}
+.carousal-bgimage{
+  position: relative;
+  /*background-image: url("/images/homepage/filmStrip.jpg");*/
+  background-color: white;
+  background-size: 75%;
+  background-position: center;
+  opacity: 0.6;
+}
+/*.review-control{
+background-color: black;
+}*/
+
+/* Macbook code starts */
+.macbook {
+ width: 150px;
+ height: 96px;
+ position: absolute;
+ left: 70%;
+ top: 60%;
+ margin: -75px 0 0 -78px;
+ perspective: 500px;
+ transform: scale(1.5);
+}
+
+.shadow {
+ position: absolute;
+ width: 60px;
+ height: 0px;
+ left: 40px;
+ top: 160px;
+ transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+ box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+ -webkit-animation: shadow infinite 7s ease;
+         animation: shadow infinite 7s ease;
+}
+
+.inner {
+ z-index: 20;
+ position: absolute;
+ width: 150px;
+ height: 96px;
+ left: 0;
+ top: 0;
+ transform-style: preserve-3d;
+ transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+ -webkit-animation: rotate infinite 7s ease;
+         animation: rotate infinite 7s ease;
+}
+
+.screen {
+ width: 150px;
+ height: 96px;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ border-radius: 7px;
+ background: #ddd;
+ transform-style: preserve-3d;
+ transform-origin: 50% 93px;
+ transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+ -webkit-animation: lid-screen infinite 7s ease;
+         animation: lid-screen infinite 7s ease;
+ background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0) 100%);
+ background-position: left bottom;
+ background-size: 300px 300px;
+ box-shadow: inset 0 3px 7px rgba(255, 255, 255, 0.5);
+}
+
+.screen .logo {
+ position: absolute;
+ width: 20px;
+ height: 24px;
+ left: 50%;
+ top: 50%;
+ margin: -12px 0 0 -10px;
+ transform: rotateY(180deg) translateZ(0.1px);
+}
+
+.screen .face-one {
+ width: 150px;
+ height: 96px;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ border-radius: 7px;
+ background: #d3d3d3;
+ transform: translateZ(2px);
+ background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.screen .face-one .camera {
+ width: 3px;
+ height: 3px;
+ border-radius: 100%;
+ background: #000;
+ position: absolute;
+ left: 50%;
+ top: 4px;
+ margin-left: -1.5px;
+}
+
+.screen .face-one .display {
+ width: 130px;
+ height: 74px;
+ margin: 10px;
+ background: url("https://cdn.theculturetrip.com/wp-content/uploads/2016/03/3560798480_4dc63dde5a_b.jpg") no-repeat center/cover #000;
+ border-radius: 1px;
+ position: relative;
+ box-shadow: inset 0 0 2px rgba(0, 0, 0, 1);
+}
+
+.screen .face-one .display .shade {
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 130px;
+ height: 74px;
+ background: linear-gradient(-135deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 47%, rgba(255, 255, 255, 0) 48%);
+ -webkit-animation: screen-shade infinite 7s ease;
+         animation: screen-shade infinite 7s ease;
+ background-size: 300px 200px;
+ background-position: 0px 0px;
+}
+
+.screen .face-one span {
+ position: absolute;
+ top: 85px;
+ left: 57px;
+ font-size: 6px;
+ color: #666
+}
+
+.body {
+ width: 150px;
+ height: 96px;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ border-radius: 7px;
+ background: #cbcbcb;
+ transform-style: preserve-3d;
+ transform-origin: 50% bottom;
+ transform: rotateX(-90deg);
+ -webkit-animation: lid-body infinite 7s ease;
+         animation: lid-body infinite 7s ease;
+ background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.body .face-one {
+ width: 150px;
+ height: 96px;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ border-radius: 7px;
+ transform-style: preserve-3d;
+ background: #dfdfdf;
+ -webkit-animation: lid-keyboard-area infinite 7s ease;
+         animation: lid-keyboard-area infinite 7s ease;
+ transform: translateZ(-2px);
+ background-image: linear-gradient(30deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.body .touchpad {
+ width: 40px;
+ height: 31px;
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ border-radius: 4px;
+ margin: -44px 0 0 -18px;
+ background: #cdcdcd;
+ background-image: linear-gradient(30deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+ box-shadow: inset 0 0 3px #888;
+}
+
+.body .keyboard {
+ width: 130px;
+ height: 45px;
+ position: absolute;
+ left: 7px;
+ top: 41px;
+ border-radius: 4px;
+ transform-style: preserve-3d;
+ background: #cdcdcd;
+ background-image: linear-gradient(30deg, rgba(0, 0, 0, 0.24) 0%, rgba(0, 0, 0, 0) 100%);
+ box-shadow: inset 0 0 3px #777;
+ padding: 0 0 0 2px;
+}
+
+.keyboard .key {
+ width: 6px;
+ height: 6px;
+ background: #444;
+ float: left;
+ margin: 1px;
+ transform: translateZ(-2px);
+ border-radius: 2px;
+ box-shadow: 0 -2px 0 #222;
+ -webkit-animation: keys infinite 7s ease;
+         animation: keys infinite 7s ease;
+}
+
+.key.space {
+ width: 45px;
+}
+
+.key.f {
+ height: 3px;
+}
+
+.body .pad {
+ width: 5px;
+ height: 5px;
+ background: #333;
+ border-radius: 100%;
+ position: absolute;
+}
+
+.pad.one {
+ left: 20px;
+ top: 20px;
+}
+
+.pad.two {
+ right: 20px;
+ top: 20px;
+}
+
+.pad.three {
+ right: 20px;
+ bottom: 20px;
+}
+
+.pad.four {
+ left: 20px;
+ bottom: 20px;
+}
+
+@-webkit-keyframes rotate {
+ 0% {
+  transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+ }
+ 5% {
+  transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
+ }
+ 20% {
+  transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
+ }
+ 25% {
+  transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+ }
+ 60% {
+  transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+ }
+ 65% {
+  transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
+ }
+ 80% {
+  transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
+ }
+ 85% {
+  transform: rotateX(-20deg) rotateY(357deg) rotateZ(0deg);
+ }
+ 87% {
+  transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+ }
+ 100% {
+  transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+ }
+}
+
+@keyframes rotate {
+ 0% {
+  transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg);
+ }
+ 5% {
+  transform: rotateX(-20deg) rotateY(-20deg) rotateZ(0deg);
+ }
+ 20% {
+  transform: rotateX(30deg) rotateY(200deg) rotateZ(0deg);
+ }
+ 25% {
+  transform: rotateX(-60deg) rotateY(150deg) rotateZ(0deg);
+ }
+ 60% {
+  transform: rotateX(-20deg) rotateY(130deg) rotateZ(0deg);
+ }
+ 65% {
+  transform: rotateX(-20deg) rotateY(120deg) rotateZ(0deg);
+ }
+ 80% {
+  transform: rotateX(-20deg) rotateY(375deg) rotateZ(0deg);
+ }
+ 85% {
+  transform: rotateX(-20deg) rotateY(357deg) rotateZ(0deg);
+ }
+ 87% {
+  transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+ }
+ 100% {
+  transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg);
+ }
+}
+
+@-webkit-keyframes lid-screen {
+ 0% {
+  transform: rotateX(0deg);
+  background-position: left bottom;
+ }
+ 5% {
+  transform: rotateX(50deg);
+  background-position: left bottom;
+ }
+ 20% {
+  transform: rotateX(-90deg);
+  background-position: -150px top;
+ }
+ 25% {
+  transform: rotateX(15deg);
+  background-position: left bottom;
+ }
+ 30% {
+  transform: rotateX(-5deg);
+  background-position: right top;
+ }
+ 38% {
+  transform: rotateX(5deg);
+  background-position: right top;
+ }
+ 48% {
+  transform: rotateX(0deg);
+  background-position: right top;
+ }
+ 90% {
+  transform: rotateX(0deg);
+  background-position: right top;
+ }
+ 100% {
+  transform: rotateX(0deg);
+  background-position: right center;
+ }
+}
+
+@keyframes lid-screen {
+ 0% {
+  transform: rotateX(0deg);
+  background-position: left bottom;
+ }
+ 5% {
+  transform: rotateX(50deg);
+  background-position: left bottom;
+ }
+ 20% {
+  transform: rotateX(-90deg);
+  background-position: -150px top;
+ }
+ 25% {
+  transform: rotateX(15deg);
+  background-position: left bottom;
+ }
+ 30% {
+  transform: rotateX(-5deg);
+  background-position: right top;
+ }
+ 38% {
+  transform: rotateX(5deg);
+  background-position: right top;
+ }
+ 48% {
+  transform: rotateX(0deg);
+  background-position: right top;
+ }
+ 90% {
+  transform: rotateX(0deg);
+  background-position: right top;
+ }
+ 100% {
+  transform: rotateX(0deg);
+  background-position: right center;
+ }
+}
+
+@-webkit-keyframes lid-body {
+ 0% {
+  transform: rotateX(-90deg);
+ }
+ 50% {
+  transform: rotateX(-90deg);
+ }
+ 100% {
+  transform: rotateX(-90deg);
+ }
+}
+
+@keyframes lid-body {
+ 0% {
+  transform: rotateX(-90deg);
+ }
+ 50% {
+  transform: rotateX(-90deg);
+ }
+ 100% {
+  transform: rotateX(-90deg);
+ }
+}
+
+@-webkit-keyframes lid-keyboard-area {
+ 0% {
+  background-color: #dfdfdf;
+ }
+ 50% {
+  background-color: #bbb;
+ }
+ 100% {
+  background-color: #dfdfdf;
+ }
+}
+
+@keyframes lid-keyboard-area {
+ 0% {
+  background-color: #dfdfdf;
+ }
+ 50% {
+  background-color: #bbb;
+ }
+ 100% {
+  background-color: #dfdfdf;
+ }
+}
+
+@-webkit-keyframes screen-shade {
+ 0% {
+  background-position: -20px 0px;
+ }
+ 5% {
+  background-position: -40px 0px;
+ }
+ 20% {
+  background-position: 200px 0;
+ }
+ 50% {
+  background-position: -200px 0;
+ }
+ 80% {
+  background-position: 0px 0px;
+ }
+ 85% {
+  background-position: -30px 0;
+ }
+ 90% {
+  background-position: -20px 0;
+ }
+ 100% {
+  background-position: -20px 0px;
+ }
+}
+
+@keyframes screen-shade {
+ 0% {
+  background-position: -20px 0px;
+ }
+ 5% {
+  background-position: -40px 0px;
+ }
+ 20% {
+  background-position: 200px 0;
+ }
+ 50% {
+  background-position: -200px 0;
+ }
+ 80% {
+  background-position: 0px 0px;
+ }
+ 85% {
+  background-position: -30px 0;
+ }
+ 90% {
+  background-position: -20px 0;
+ }
+ 100% {
+  background-position: -20px 0px;
+ }
+}
+
+@-webkit-keyframes keys {
+ 0% {
+  box-shadow: 0 -2px 0 #222;
+ }
+ 5% {
+  box-shadow: 1 -1px 0 #222;
+ }
+ 20% {
+  box-shadow: -1px 1px 0 #222;
+ }
+ 25% {
+  box-shadow: -1px 1px 0 #222;
+ }
+ 60% {
+  box-shadow: -1px 1px 0 #222;
+ }
+ 80% {
+  box-shadow: 0 -2px 0 #222;
+ }
+ 85% {
+  box-shadow: 0 -2px 0 #222;
+ }
+ 87% {
+  box-shadow: 0 -2px 0 #222;
+ }
+ 100% {
+  box-shadow: 0 -2px 0 #222;
+ }
+}
+
+@keyframes keys {
+ 0% {
+  box-shadow: 0 -2px 0 #222;
+ }
+ 5% {
+  box-shadow: 1 -1px 0 #222;
+ }
+ 20% {
+  box-shadow: -1px 1px 0 #222;
+ }
+ 25% {
+  box-shadow: -1px 1px 0 #222;
+ }
+ 60% {
+  box-shadow: -1px 1px 0 #222;
+ }
+ 80% {
+  box-shadow: 0 -2px 0 #222;
+ }
+ 85% {
+  box-shadow: 0 -2px 0 #222;
+ }
+ 87% {
+  box-shadow: 0 -2px 0 #222;
+ }
+ 100% {
+  box-shadow: 0 -2px 0 #222;
+ }
+}
+
+@-webkit-keyframes shadow {
+ 0% {
+  transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+ }
+ 5% {
+  transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+  box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+ }
+ 20% {
+  transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
+  box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.3);
+ }
+ 25% {
+  transform: rotateX(80deg) rotateY(-20deg) rotateZ(50deg);
+  box-shadow: 0 0 35px 15px rgba(0, 0, 0, 0.1);
+ }
+ 60% {
+  transform: rotateX(80deg) rotateY(0deg) rotateZ(-50deg) translateX(30px);
+  box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+ }
+ 100% {
+  box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+ }
+}
+
+@keyframes shadow {
+ 0% {
+  transform: rotateX(80deg) rotateY(0deg) rotateZ(0deg);
+  box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+ }
+ 5% {
+  transform: rotateX(80deg) rotateY(10deg) rotateZ(0deg);
+  box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+ }
+ 20% {
+  transform: rotateX(30deg) rotateY(-20deg) rotateZ(-20deg);
+  box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.3);
+ }
+ 25% {
+  transform: rotateX(80deg) rotateY(-20deg) rotateZ(50deg);
+  box-shadow: 0 0 35px 15px rgba(0, 0, 0, 0.1);
+ }
+ 60% {
+  transform: rotateX(80deg) rotateY(0deg) rotateZ(-50deg) translateX(30px);
+  box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+ }
+ 100% {
+  box-shadow: 0 0 60px 40px rgba(0, 0, 0, 0.3);
+ }
+}
+/* Macbook code ends */
